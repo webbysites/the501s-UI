@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
@@ -27,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFontAwesomeModule,
     AppRoutingModule,
     BrowserModule,
+    HttpClientModule,
     MatIconModule,
     MatSidenavModule,
     BrowserAnimationsModule,
