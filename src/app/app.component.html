@@ -1,5 +1,63 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container-fluid">
-  <app-nav></app-nav>
-  <router-outlet></router-outlet>
+  <div class="area">
+    <div>
+      <nav class="main-menu">
+        <ul>
+          <li>
+            <a href="#">
+              <mat-icon svgIcon="home" class="mr-4 ml-3"></mat-icon>
+              <span class="nav-text">
+                Home
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <mat-icon svgIcon class="mr-4 ml-3">about</mat-icon>
+              <span class="nav-text">
+                About
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <mat-icon svgIcon class="mr-4 ml-3">contact</mat-icon>
+              <span class="nav-text">
+                Contact
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <mat-icon svgIcon class="mr-4 ml-3">calendar</mat-icon>
+              <span class="nav-text">
+                Calendar
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <mat-icon svgIcon class="mr-4 ml-3">voting</mat-icon>
+              <span class="nav-text">
+                Voting
+              </span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- <ul class="logout">
+          <li>
+              <a href="#">
+                    <i class="fa fa-power-off fa-2x"></i>
+                  <span class="nav-text">
+                      Logout
+                  </span>
+              </a>
+          </li>
+      </ul> -->
+      </nav>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
