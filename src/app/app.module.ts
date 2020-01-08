@@ -17,6 +17,8 @@ import { DatesComponent } from './dates/dates.component';
 import { ContactComponent } from './contact/contact.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { VotingComponent } from './voting/voting.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     ContactComponent,
     LandingPageComponent,
     SidenavComponent,
+    VotingComponent,
+    AboutComponent,
   ],
   imports: [
     AngularFontAwesomeModule,
