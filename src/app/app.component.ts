@@ -16,27 +16,27 @@ export class AppComponent {
     ) {
     this.matIconRegistry.addSvgIcon(
       'contact',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/customIcons/contact.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/img/icons/contact.svg')
     );
     this.matIconRegistry.addSvgIcon(
       'home',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/icons/home.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/img/icons/home.svg')
     );
     this.matIconRegistry.addSvgIcon(
       'about',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/customIcons/about.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/img/icons/about.svg')
     );
     this.matIconRegistry.addSvgIcon(
       'calendar',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/customIcons/calendar.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/img/icons/calendar.svg')
     );
     this.matIconRegistry.addSvgIcon(
       'vote',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/customIcons/vote.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/img/icons/vote.svg')
     );
     this.matIconRegistry.addSvgIcon(
       'thumb-up',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/customIcons/thumb-up.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/img/icons/thumb-up.svg')
     );
 
   }

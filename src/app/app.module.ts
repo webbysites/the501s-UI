@@ -1,4 +1,7 @@
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,7 +16,7 @@ import { NavComponent } from './nav/nav.component';
 import { DatesComponent } from './dates/dates.component';
 import { ContactComponent } from './contact/contact.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DatesComponent,
     ContactComponent,
     LandingPageComponent,
+    SidenavComponent,
   ],
   imports: [
     AngularFontAwesomeModule,
@@ -32,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatSidenavModule,
     BrowserAnimationsModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
 
   ],
   providers: [],

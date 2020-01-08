@@ -8,8 +8,8 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-/* mat-icon path {
-  size: 84px;
-  fill: #f43605;
-} */
+mat-icon path {
+  color: #a8112e;
+}
+
 
