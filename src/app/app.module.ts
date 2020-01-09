@@ -19,6 +19,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { VotingComponent } from './voting/voting.component';
 import { AboutComponent } from './about/about.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AboutComponent } from './about/about.component';
     SidenavComponent,
     VotingComponent,
     AboutComponent,
+    SideNavComponent,
   ],
   imports: [
     AngularFontAwesomeModule,

@@ -1,0 +1,147 @@
+$blue: #373B42;
+$white: #fff;
+$blue-dark: #81ecec;
+$blue-light: #81ecec;
+$charcoal: #373b42;
+$charcoal-dark: #212429;
+
+a {
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: $blue;
+}
+
+body {
+  transition: 300ms;
+  font-size: 13px;
+  line-height: 20px;
+  background-color: lighten(black, 5%);
+}
+
+.activity-link {
+  border-bottom: .5px solid #505464 !important
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.nav-bottom {
+  background: $blue;
+  height: 100%;
+}
+
+.nav-activity {
+  display: block;
+  position: fixed;
+  text-align: right;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: auto;
+  max-width: 50px;
+  height: 100vh;
+  padding-right: 0;
+  padding-left: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 200ms ease-out;
+  border-top: none;
+  &:hover {
+    max-width: 200px;
+    cursor: pointer;
+    transition: 350ms;
+  }
+  svg {
+    float: left;
+    margin: 10px, 20px, 10px, 10px;
+  }
+  a .activity-title {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: $white;
+    margin: 10px 5px;
+  }
+  a .activity-listings {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: rgba(129, 236, 236, .8);
+  }
+
+  .icon-wrap {
+    position: relative;
+    // left: -12px;
+    float: left;
+  }
+
+  .icon-wrap i {
+    font-size: 20px;
+    padding: 10px 5px;
+  }
+
+  svg {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    // margin: 10px;
+    margin-right: 20px;
+    circle {
+      fill: none;
+    }
+  }
+  .activity-link , a.activity-link {
+    display: block;
+    min-width: 155px;
+    padding: 5px 10px;
+    font-size: .9em;
+    white-space: nowrap;
+    border-top: none;
+    background-color: $charcoal;
+    border-color: $charcoal-dark;
+    &active {
+      background-color: $blue;
+      border-color: $blue;
+      .activity-listings {
+        color: #81ecec;
+      }
+      .svg-fill, svg circle {
+        fill: $blue-dark;
+      }
+      .activity-title {
+        color: $blue-light
+      }
+      &:hover .svg-fill {
+        fill: $blue-light
+      }
+    }
+    &:hover {
+      border-color: $blue;
+      background-color: lighten($blue, 5%);
+      transition: 350ms;
+    }
+    .svg-fill, .svg-icon {
+      &, & * {
+        transition: fill .2s;
+      }
+    }
+    .svg-fill, .svg-icon {
+      &, & * {
+        transition: fill .2s;
+      }
+    }
+    .svg-fill, .svg-fill * {
+      fill: #81ecec;
+    }
+  }
+}
+
+.nav-activity .svg-icon, .nav-activity .svg-icon * {
+  fill: $white;
+}
