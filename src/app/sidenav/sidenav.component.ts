@@ -10,6 +10,11 @@ export class SidenavComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  closeNav() {
+    document.getElementById('mySidebar').style.width = '0';
   }
 
 }

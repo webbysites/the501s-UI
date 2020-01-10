@@ -1,135 +1,57 @@
-.fa-2x {
-  font-size: 2em;
-}
-.fa {
-  position: relative;
-  display: table-cell;
-  width: 60px;
-  height: 36px;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 20px;
-}
-
-.main-menu:hover,
-nav.main-menu.expanded {
-  width: 250px;
-  overflow: visible;
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+background-color: #373B42;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 
-.main-menu {
-  background: #212121;
-  border-right: 1px solid #333;
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
   position: absolute;
   top: 0;
-  bottom: 0;
-  height: 100%;
-  left: 0;
-  width: 60px;
-  overflow: hidden;
-  -webkit-transition: width 300ms linear;
-  transition: width 300ms linear;
-  -webkit-transform: translateZ(0) scale(1, 1);
-  z-index: 1000;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
-.main-menu > ul {
-  margin: 7px 0;
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
 }
 
-.main-menu li {
-  position: relative;
-  display: block;
-  width: 250px;
+.openbtn:hover {
+  background-color: #444;
 }
 
-.main-menu li > a {
-  position: relative;
-  display: table;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: #999;
-  font-family: arial;
-  font-size: 14px;
-  text-decoration: none;
-  -webkit-transform: translateZ(0) scale(1, 1);
-  -webkit-transition: all 300ms linear;
-  transition: all 300ms linear;
-  transition-delay: 200ms;
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
 }
 
-.main-menu .nav-icon {
-  position: relative;
-  display: table-cell;
-  width: 60px;
-  height: 36px;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 18px;
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
 }
-
-.main-menu .nav-text {
-  position: relative;
-  display: table-cell;
-  vertical-align: middle;
-  width: 190px;
-  font-family: "Titillium Web", sans-serif;
-}
-
-.main-menu > ul.logout {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
-
-.no-touch .scrollable.hover {
-  overflow-y: hidden;
-}
-
-.no-touch .scrollable.hover:hover {
-  overflow-y: auto;
-  overflow: visible;
-}
-
-a:hover,
-a:focus {
-  text-decoration: none;
-}
-
-nav {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-
-nav ul,
-nav li {
-  outline: 0;
-  margin: 0;
-  padding: 10px 0;
-}
-.main-menu li:hover > a,
-nav.main-menu li.active > a,
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus,
-.dropdown-menu > .active > a,
-.dropdown-menu > .active > a:hover,
-.dropdown-menu > .active > a:focus,
-.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
-.dashboard-page nav.dashboard-menu ul li.active a {
-  color: #fff;
-  background-color: #5fa2db;
-}
-.area {
-  float: left;
-  background: #e2e2e2;
-  width: 100%;
-  height: 100%;
-  /* position: fixed; */
-}
-
-
-
-

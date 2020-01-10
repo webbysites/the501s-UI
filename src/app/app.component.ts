@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -7,8 +7,10 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'The 501s';
+
+
 
   constructor(
     private matIconRegistry: MatIconRegistry,
@@ -40,6 +42,15 @@ export class AppComponent {
     );
 
   }
+
+  ngOnInit() {
+
+  }
+
+   openNav() {
+    document.getElementById('mySidebar').style.width = '200px';
+  }
+
 
 
 
