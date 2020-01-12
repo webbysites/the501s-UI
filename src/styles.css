@@ -12,4 +12,18 @@ mat-icon path {
   color: #a8112e;
 }
 
+.the501s-btn {
+  color: #fff;
+  background: #a8112e;
+  border: 1px solid #a8112e;
+  height: 20px;
+  width: 50px;
+  padding: 5px;
+}
+
+.the501s-btn:hover {
+  color: #a8112e;
+  background: #fff;
+  transition: ease 300ms;
+}
 

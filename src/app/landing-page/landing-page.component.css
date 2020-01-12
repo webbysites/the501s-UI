@@ -1,3 +1,19 @@
+
+/* =============== */
+/* background gifs */
+/* =============== */
+
+#gif-desktop {
+  background: url('../../assets/img/landingpageAssets/501s-neon-beer-horizontal-bgcolor.gif') no-repeat center center;
+  background-size: 100% 100%;
+}
+
+#gif-mobile {
+  height: 100vh;
+  background: url('../../assets/img/landingpageAssets/501s-neon-beer-vertical-square.gif') no-repeat center center;
+  background-size: 100% 60%;
+}
+
 img {
   width: 100%;
 }
@@ -5,4 +21,24 @@ img {
 .container-fluid {
   height: 100vh;
   background: #000;
+  position: absolute;
+}
+
+.the501s-btn {
+  color: #fff;
+  background: #a8112e;
+  border: 1px solid #a8112e;
+  height: 40px;
+  width: 20%;
+  padding: 5px;
+}
+
+.the501s-btn:hover {
+  color: #a8112e;
+  background: #fff;
+  transition: ease 300ms;
+}
+
+#enter-btn {
+  transition: ease 800ms;
 }
