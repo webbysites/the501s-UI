@@ -3,6 +3,7 @@ export class the501sDate {
   date: Date;
   start: string;
   end: string;
+  location: string;
   description: string;
   img: string;
 }

@@ -60,11 +60,12 @@
   </div>
   <br />
   <div [ngSwitch]="view">
-    <mwl-calendar-month-view
+    <mwl-calendar-month-view (click)="getInfo($event)"
       *ngSwitchCase="CalendarView.Month"
       [viewDate]="viewDate"
       [events]="events"
       [refresh]="refresh"
+      [cellTemplate]="customCellTemplate"
       [activeDayIsOpen]="activeDayIsOpen"
       (dayClicked)="dayClicked($event.day)"
       (eventClicked)="handleEvent('Clicked', $event.event)"
@@ -91,6 +92,21 @@
     </mwl-calendar-day-view>
   </div>
 </div>
+<ng-template #customCellTemplate let-day="day" let-locale="locale">
+  <div class="cal-cell-top">
+    <span class="cal-day-badge" *ngIf="day.badgeTotal > 0">
+      {{ day.badgeTotal }}
+    </span>
+    <span class="cal-day-number">
+      {{ day.date | calendarDate: 'monthViewDayNumber':locale }}
+    </span>
+  </div>
+  <small style="margin: 5px" *ngFor="let event of day.events">
+    <a href="javasccript: void(0);" (click)="handleEvent('Clicked', event)">
+      {{ event?.title }}<br>
+    </a>
+  </small>
+</ng-template>
 
 <!-- Everything you see below is just for the demo, you don't need to include it in your app -->
 
@@ -181,26 +197,42 @@
 <!-- </table>
 </div> -->
 
-<ng-template #modalContent let-close="close">
-  <div class="modal-header">
-    <h5 class="modal-title">Event action occurred</h5>
-    <button type="button" class="close" (click)="close()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div>
-      Action:
-      <pre>{{ modalData?.action }}</pre>
+<div class="row justify-content-center">
+  <ng-template #modalContent let-close="close">
+
+    <div class="modal-header">
+      <div class="row w-100 justify-content-center">
+        <h5 class="modal-title">{{ modalData?.event.title }}</h5>
+      </div>
+      <button type="button" class="close" (click)="close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-    <div>
-      Event:
-      <pre>{{ modalData?.event | json }}</pre>
+
+    <div class="modal-body">
+      <div>
+        <pre>Date: {{ modalData?.event.start | date }}</pre>
+      </div>
+      <div class="row">
+        <ng-container *ngFor="let event of myEvents">
+          <div class="col-12" >
+            <pre>Start Time: {{ event.start }}</pre>
+            <pre>End Time: {{ event.end }}</pre>
+            <p>Location:
+              <a href="https://goo.gl/maps/nRxWLAje1AQGLJwi7" target="_blank">
+                {{ event.location }}
+              </a>
+            </p>
+          </div>
+        </ng-container>
+      </div>
     </div>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="close()">
-      OK
-    </button>
-  </div>
-</ng-template>
+
+    <div class="modal-footer">
+      <button type="button" class="btn the501s-btn" (click)="close()">
+        OK
+      </button>
+    </div>
+
+  </ng-template>
+</div>

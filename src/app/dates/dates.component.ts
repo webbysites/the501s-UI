@@ -23,6 +23,7 @@ import {
   CalendarEventTimesChangedEvent,
   CalendarView
 } from 'angular-calendar';
+import { the501sDate } from '../models/the501sDate';
 
 const colors: any = {
   red: {
@@ -54,6 +55,10 @@ export class DatesComponent implements OnInit {
 
   viewDate: Date = new Date();
 
+  myEvent: the501sDate;
+
+  newEvent: any;
+
   modalData: {
     action: string;
     event: CalendarEvent;
@@ -79,37 +84,49 @@ export class DatesComponent implements OnInit {
 
   refresh: Subject<any> = new Subject();
 
+  myEvents: the501sDate[] = [
+    {
+      title: 'the 501s play joey\s',
+      date: new Date('1/20/2020'),
+      start: '8:00 pm',
+      end: '12:00 am',
+      location: '2417 N St Mary\'s St, San Antonio, TX 78212',
+      description: 'Come see the 501s, San Antonio\s 13th or 14th best classic country tribute band, play all your favorite country tunes!',
+      img: '../../assets/img/homePageAssests/the-501s-3.jpg'
+    }
+  ];
+
   events: CalendarEvent[] = [
+    // {
+    //   start: subDays(startOfDay(new Date()), 1),
+    //   end: addDays(new Date(), 1),
+    //   title: 'A 3 day event',
+    //   color: colors.red,
+    //   actions: this.actions,
+    //   allDay: true,
+    //   resizable: {
+    //     beforeStart: true,
+    //     afterEnd: true
+    //   },
+    //   draggable: true
+    // },
+    // {
+    //   start: startOfDay(new Date()),
+    //   title: 'An event with no end date',
+    //   color: colors.yellow,
+    //   actions: this.actions
+    // },
+    // {
+    //   start: subDays(endOfMonth(new Date()), 3),
+    //   end: addDays(endOfMonth(new Date()), 3),
+    //   title: 'A long event that spans 2 months',
+    //   color: colors.blue,
+    //   allDay: true
+    // },
     {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'A 3 day event',
-      color: colors.red,
-      actions: this.actions,
-      allDay: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
-    },
-    {
-      start: startOfDay(new Date()),
-      title: 'An event with no end date',
-      color: colors.yellow,
-      actions: this.actions
-    },
-    {
-      start: subDays(endOfMonth(new Date()), 3),
-      end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
-      color: colors.blue,
-      allDay: true
-    },
-    {
-      start: addHours(startOfDay(new Date()), 2),
-      end: addHours(new Date(), 2),
-      title: 'A draggable and resizable event',
+      start: addHours(startOfDay(new Date('1/20/2020')), 0),
+      end: addHours(new Date('1/20/2020'), 4),
+      title: 'the 501s play Joey\s',
       color: colors.yellow,
       actions: this.actions,
       resizable: {
@@ -122,9 +139,15 @@ export class DatesComponent implements OnInit {
 
   activeDayIsOpen = true;
 
-  constructor(private modal: NgbModal) {}
+  constructor(
+    private modal: NgbModal,
+  ) {}
 
   ngOnInit() {
+  }
+
+  getInfo(event: Event) {
+    console.log(event);
   }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
@@ -162,6 +185,9 @@ export class DatesComponent implements OnInit {
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
     this.modal.open(this.modalContent, { size: 'lg' });
+    this.myEvents.forEach(res => {
+      console.log(this.modalData);
+    })
   }
 
   addEvent(): void {

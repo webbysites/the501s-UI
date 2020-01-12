@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 .container-fluid {
   padding: 0;
@@ -16,7 +17,7 @@ mat-icon path {
   color: #fff;
   background: #a8112e;
   border: 1px solid #a8112e;
-  height: 20px;
+  height: 40px;
   width: 50px;
   padding: 5px;
 }
@@ -25,5 +26,10 @@ mat-icon path {
   color: #a8112e;
   background: #fff;
   transition: ease 300ms;
+}
+
+/* hide dark grey sub menu of current/clicked day on dates calendar */
+.cal-month-view .cal-open-day-events {
+  display: none;
 }
 
