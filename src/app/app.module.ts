@@ -5,6 +5,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 
 
@@ -39,13 +40,13 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     AngularFontAwesomeModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     HttpClientModule,
     MatIconModule,
     MatSidenavModule,
-    BrowserAnimationsModule,
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
-
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
