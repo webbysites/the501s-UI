@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -22,6 +23,7 @@ import { VotingComponent } from './voting/voting.component';
 import { AboutComponent } from './about/about.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { FooterComponent } from './footer/footer.component';
+import { DateModalComponent } from './modals/date-modal/date-modal.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { FooterComponent } from './footer/footer.component';
     AboutComponent,
     SideNavComponent,
     FooterComponent,
+    DateModalComponent,
   ],
   imports: [
     AngularFontAwesomeModule,
@@ -44,11 +47,13 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     HttpClientModule,
+    MatDialogModule,
     MatIconModule,
     MatSidenavModule,
     NgbModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DateModalComponent]
 })
 export class AppModule { }

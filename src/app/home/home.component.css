@@ -12,3 +12,12 @@ img {
   height: 300px;
 
 }
+
+.other-row {
+  background: #333;
+}
+
+.event-image {
+  height: 200px;
+  background: url('../../assets/img/homepageAssets/the-501s-3.jpg');
+}

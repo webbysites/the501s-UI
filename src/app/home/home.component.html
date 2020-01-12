@@ -3,8 +3,22 @@
 <div class="container">
   <div class="row h-100">
     <div class="col d-flex flex-column align-items-center justify-content-center">
-      <h1 class="mb-5">The 501s</h1>
-      <mat-icon style="transform: scale(3)" svgIcon="home"></mat-icon>
+      <h1 class="mb-3 display-1">The 501s</h1>
+      <h4>
+        San Antonio's {{ randomNumber1 }}th or {{ randomNumber2 }}th favorite classic country tribute band!
+      </h4>
+      <mat-icon style="transform: scale(3)" svgIcon="home" class="mt-5"></mat-icon>
     </div>
   </div>
+
+  <div class="other-row" class="row mt-5 justify-content-center">
+    <h1 class="my-2 ">Upcoming Dates</h1>
+    <div *ngFor="let event of events" class="col-12 col-lg-8 offset-lg-2 border rounded p-4">
+      <div class="event-image"></div>
+      <h1 (click)="openModal()">
+        {{ event.title }}
+      </h1>
+    </div>
+  </div>
+
 </div>

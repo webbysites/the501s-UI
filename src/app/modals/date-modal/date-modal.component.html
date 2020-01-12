@@ -1,0 +1,18 @@
+<button mat-mini-fab class="exit-btn" [mat-dialog-close]="false">
+  <mat-icon style="position: relative; top: -1px;" matSuffix>clear</mat-icon>
+</button>
+<br>
+<h2 mat-dialog-title class="text-center">{{ data?.title}}</h2>
+<hr>
+<mat-dialog-content class="modal-content row w-100 justify-content-center">
+  <div class="row">
+    <div class="col-12 col-lg-6 offset-lg-3">
+      <p>Date: {{ data?.date | date}}</p>
+      <p>Start: {{ data?.start }}</p>
+      <p>End: {{ data?.end }}</p>
+      <p>Location: {{ data?.location }}</p>
+      <p>Details: {{ data?.description }}</p>
+    </div>
+  </div>
+</mat-dialog-content>
+
