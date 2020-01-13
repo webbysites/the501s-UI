@@ -1,24 +1,42 @@
-<div id="header-image" class="container-fluid">
+<div id="header-image" class="d-none d-lg-block container-fluid">
+  <img src="../../assets/img/homepageAssets/the501s-header-1-sm.jpg">
 </div>
-<div class="container">
+
+<div class="container-fluid d-block d-lg-none">
+  <img src="../../assets/img/homepageAssets/the501s-header-1-mobile.jpg">
+</div>
+
+
+<div class="container-fluid px-0">
   <div class="row h-100">
-    <div class="col d-flex flex-column align-items-center justify-content-center">
-      <h1 class="mb-3 display-1">The 501s</h1>
-      <h4>
-        San Antonio's {{ randomNumber1 }}th or {{ randomNumber2 }}th favorite classic country tribute band!
-      </h4>
-      <mat-icon style="transform: scale(3)" svgIcon="home" class="mt-5"></mat-icon>
+    <div
+      class="col d-flex flex-column align-items-center justify-content-center"
+    >
+      <h1 class="mb-3 display-2">The 501s</h1>
+      <h3 class="text-center">
+        San Antonio's <span id="display1" style="color: #a8112e"></span>th or <span id="display2" style="color: #a8112e"></span>th favorite classic country tribute band!
+      </h3>
     </div>
   </div>
 
-  <div class="other-row" class="row mt-5 justify-content-center">
-    <h1 class="my-2 ">Upcoming Dates</h1>
-    <div *ngFor="let event of events" class="col-12 col-lg-8 offset-lg-2 border rounded p-4">
-      <div class="event-image"></div>
-      <h1 (click)="openModal()">
+  <div class="row other-row mt-5 py-5 justify-content-center mx-auto">
+    <h1 class="my-2 w-100 text-center">Upcoming Dates</h1>
+    <div
+      *ngFor="let event of events"
+      class="date-column col-12 col-lg-8 d-flex flex-column offset-lg-2 border rounded p-4 mx-auto"
+    >
+      <div class="event-image">
+        <div class="row h-100 w-100 align-items-end">
+          <div class="col-3 offset-9 col-md-1 offset-md-11 date mb-3 d-flex flex-column align-items-center justify-content-center">
+            <small>{{ event.date | date: 'EE' }}</small>
+            <h4 class="mb-0" style="color: #a8112e;">{{ event.date | date: 'dd' }}</h4>
+            <small>{{ event.date | date: 'MMM' }}</small>
+          </div>
+        </div>
+      </div>
+      <h4 class="fake-anchor mt-3" (click)="openModal()">
         {{ event.title }}
-      </h1>
+      </h4>
     </div>
   </div>
-
 </div>

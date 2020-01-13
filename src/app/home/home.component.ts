@@ -3,7 +3,28 @@ import { DatesComponent } from 'src/app/dates/dates.component';
 import { the501sEvents } from '../the501sEvents';
 import { DateModalComponent } from '../modals/date-modal/date-modal.component';
 import { MatDialog } from '@angular/material';
-import { Subscription } from 'rxjs';
+import { Subscription, fromEvent, timer } from 'rxjs';
+import { take, switchMap, mapTo, startWith, scan, takeWhile, tap } from 'rxjs/operators';
+
+let currentNumber: any = 0;
+
+const takeUntilFunction = (endRange, currentNumber) => {
+  return endRange > currentNumber
+  ? val => val <= endRange
+  : val => val >= endRange;
+};
+
+const positiveOrNegative = (endRange, currentNumber) => {
+  return endRange > currentNumber ? 1 : -1;
+};
+
+const updateHTML = id => val => (document.getElementById(id).innerHTML = val);
+
+// streams
+const enter1$ = fromEvent(window, 'load');
+const enter2$ = fromEvent(window, 'load');
+
+
 
 @Component({
   selector: 'app-home',
@@ -14,6 +35,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   randomNumber1: number;
   randomNumber2: number;
+
+  private subscription1: Subscription;
+  private subscription2: Subscription;
 
   events = the501sEvents;
 
@@ -26,6 +50,36 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.generateRanking(4, 18);
     console.log(this.events);
+
+    this.subscription1 = enter1$.pipe(
+      take(1),
+      switchMap(endRange => {
+        return timer(0, 100).pipe(
+          mapTo(positiveOrNegative(this.randomNumber1, currentNumber)),
+          startWith(currentNumber),
+          scan((acc, curr) => acc + curr),
+          takeWhile(takeUntilFunction(this.randomNumber1, currentNumber))
+        )
+      }),
+      tap(v => (currentNumber = v)),
+      startWith(currentNumber)
+    )
+      .subscribe(updateHTML('display1'));
+
+    this.subscription2 = enter2$.pipe(
+      take(1),
+      switchMap(endRange => {
+        return timer(0, 100).pipe(
+          mapTo(positiveOrNegative(this.randomNumber2, currentNumber)),
+          startWith(currentNumber),
+          scan((acc, curr) => acc + curr),
+          takeWhile(takeUntilFunction(this.randomNumber2, currentNumber))
+        )
+      }),
+      tap(v => (currentNumber = v)),
+      startWith(currentNumber)
+    ).subscribe(updateHTML('display2'));
+
   }
 
   generateRanking(min, max) {
@@ -59,6 +113,14 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     if (this.dialogSubscription) {
       this.dialogSubscription.unsubscribe();
+    }
+
+    if (this.subscription1) {
+      this.subscription1.unsubscribe();
+    }
+
+    if (this.subscription2) {
+      this.subscription2.unsubscribe();
     }
   }
 

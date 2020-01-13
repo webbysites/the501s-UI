@@ -2,7 +2,8 @@
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 .container-fluid {
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 html, body { height: 100%; }
@@ -31,5 +32,9 @@ mat-icon path {
 /* hide dark grey sub menu of current/clicked day on dates calendar */
 .cal-month-view .cal-open-day-events {
   display: none;
+}
+
+.heading-light {
+  font-weight: 300;
 }
 

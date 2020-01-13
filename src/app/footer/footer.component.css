@@ -1,0 +1,10 @@
+#footer-div {
+  background: #ddd;
+  height: 150px;
+}
+
+#credit-row {
+  background: #2a2d2d;
+  color: rgba(212, 175, 55, .4);
+  height: 35px;
+}

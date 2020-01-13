@@ -2,7 +2,7 @@ import { the501sDate } from './models/the501sDate';
 
 export const the501sEvents: the501sDate[] = [
   {
-    title: 'the 501s play joey\s',
+    title: 'the 501s play Joey\'s',
       date: new Date('1/20/2020'),
       start: '8:00 pm',
       end: '12:00 am',
