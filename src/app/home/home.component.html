@@ -23,11 +23,11 @@
     <h1 class="my-2 w-100 text-center">Upcoming Dates</h1>
     <div
       *ngFor="let event of events"
-      class="date-column col-12 col-lg-8 d-flex flex-column offset-lg-2 border rounded p-4 mx-auto"
+      class="date-column col-12 col-lg-4 d-flex flex-column offset-lg-4 border rounded p-4 mx-auto"
     >
       <div class="event-image">
-        <div class="row h-100 w-100 align-items-end">
-          <div class="col-3 offset-9 col-md-1 offset-md-11 date mb-3 d-flex flex-column align-items-center justify-content-center">
+        <div class="row h-100 w-100 align-items-start">
+          <div class="col-3 col-md-2 ml-4 date mt-3 d-flex flex-column align-items-center justify-content-center">
             <small>{{ event.date | date: 'EE' }}</small>
             <h4 class="mb-0" style="color: #a8112e;">{{ event.date | date: 'dd' }}</h4>
             <small>{{ event.date | date: 'MMM' }}</small>
