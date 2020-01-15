@@ -215,13 +215,15 @@
       </div>
       <div class="row">
         <ng-container *ngFor="let event of myEvents">
-          <div class="col-12" >
-            <pre>Start Time: {{ event.start }}</pre>
-            <pre>End Time: {{ event.end }}</pre>
+          <div class="col-12" *ngIf="event.start === modalData?.event.start">
+            <pre>Start Time: {{ event.start | date: 'h:mm a' }}</pre>
             <p>Location:
               <a href="https://goo.gl/maps/nRxWLAje1AQGLJwi7" target="_blank">
                 {{ event.location }}
               </a>
+            </p>
+            <p>
+              {{ event.description }}
             </p>
           </div>
         </ng-container>

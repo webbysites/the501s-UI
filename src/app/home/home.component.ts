@@ -49,7 +49,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.generateRanking(4, 18);
-    console.log(this.events);
 
     this.subscription1 = enter1$.pipe(
       take(1),
@@ -84,7 +83,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   generateRanking(min, max) {
     this.randomNumber1 =  Math.floor(Math.random() * (max - min + 1) + min);
-    console.log(this.randomNumber1);
     this.randomNumber2 = this.randomNumber1 + 1;
 
   }

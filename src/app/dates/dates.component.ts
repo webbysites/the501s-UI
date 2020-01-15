@@ -13,7 +13,8 @@ import {
   endOfMonth,
   isSameDay,
   isSameMonth,
-  addHours
+  addHours,
+  getTime
 } from 'date-fns';
 import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -24,6 +25,8 @@ import {
   CalendarView
 } from 'angular-calendar';
 import { the501sDate } from '../models/the501sDate';
+import { DatesService } from '../services/dates.service';
+import { DatePipe } from '@angular/common';
 
 const colors: any = {
   red: {
@@ -84,19 +87,19 @@ export class DatesComponent implements OnInit {
 
   refresh: Subject<any> = new Subject();
 
-  myEvents: the501sDate[] = [
-    {
-      title: 'the 501s play joey\s',
-      date: new Date('1/20/2020'),
-      start: '8:00 pm',
-      end: '12:00 am',
-      location: '2417 N St Mary\'s St, San Antonio, TX 78212',
-      description: 'Come see the 501s, San Antonio\s 13th or 14th best classic country tribute band, play all your favorite country tunes!',
-      img: '../../assets/img/homePageAssests/the-501s-3.jpg'
-    }
-  ];
+  myEvents: the501sDate[] = [];
+  //   {
+  //     title: 'the 501s play joey\s',
+  //     date: new Date('1/20/2020'),
+  //     start: '8:00 pm',
+  //     end: '12:00 am',
+  //     location: '2417 N St Mary\'s St, San Antonio, TX 78212',
+  //     description: 'Come see the 501s, San Antonio\s 13th or 14th best classic country tribute band, play all your favorite country tunes!',
+  //     img: '../../assets/img/homePageAssests/the-501s-3.jpg'
+  //   }
+  // ];
 
-  events: CalendarEvent[] = [
+  events: CalendarEvent[] = [];
     // {
     //   start: subDays(startOfDay(new Date()), 1),
     //   end: addDays(new Date(), 1),
@@ -122,32 +125,72 @@ export class DatesComponent implements OnInit {
     //   title: 'A long event that spans 2 months',
     //   color: colors.blue,
     //   allDay: true
-    // },
-    {
-      start: addHours(startOfDay(new Date('1/20/2020')), 0),
-      end: addHours(new Date('1/20/2020'), 4),
-      title: 'the 501s play Joey\s',
-      color: colors.yellow,
-      actions: this.actions,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
-    }
-  ];
+    // // },
+    // {
+    //   start: addHours(startOfDay(new Date('1/20/2020')), 0),
+    //   end: addHours(new Date('1/20/2020'), 4),
+    //   title: 'the 501s play Joey\s',
+    //   color: colors.yellow,
+    //   actions: this.actions,
+    //   resizable: {
+    //     beforeStart: true,
+    //     afterEnd: true
+    //   },
+    //   draggable: true
+    // }
+  // ];
 
   activeDayIsOpen = true;
 
   constructor(
     private modal: NgbModal,
+    private datesService: DatesService,
+    public datePipe: DatePipe
   ) {}
 
   ngOnInit() {
+    this.getDates();
+    this.getModalData();
   }
 
   getInfo(event: Event) {
     console.log(event);
+  }
+
+  getDates() {
+    this.datesService.getDates().subscribe(e => {
+      e.forEach(res => {
+        this.newEvent = {
+          start: addHours(new Date(res.datetime), 0).getTime(),
+          end: addHours(new Date(res.datetime), 4),
+          title:  'the 501s @ ' +  res.venue.name,
+          color: colors.blue,
+          actions: this.actions
+        }
+        this.events.push(this.newEvent);
+        this.refresh.next();
+      });
+    });
+  }
+
+  getModalData() {
+    this.datesService.getDates().subscribe(e => {
+      e.forEach(event => {
+
+        this.myEvent = {
+          title: 'the 501s @ ' + event.venue.name,
+          date: event.datetime,
+          start: new Date(event.datetime).getTime(),
+          end: event.datetime,
+          location: event.venue.name + ' ' + event.venue.city + ' ' + event.venue.region,
+          description: event.description,
+          img: ''
+        };
+        console.log(event.start);
+        this.myEvents.push(this.myEvent);
+        this.refresh.next();
+      });
+    });
   }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
@@ -185,8 +228,8 @@ export class DatesComponent implements OnInit {
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
     this.modal.open(this.modalContent, { size: 'lg' });
-    this.myEvents.forEach(res => {
-      console.log(this.modalData);
+    this.events.forEach(res => {
+      console.log(res.start);
     })
   }
 

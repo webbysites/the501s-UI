@@ -9,6 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 
+import { DatePipe } from '@angular/common';
+
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppRoutingModule } from './app-routing.module';
@@ -52,7 +54,7 @@ import { DateModalComponent } from './modals/date-modal/date-modal.component';
     MatSidenavModule,
     NgbModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
   entryComponents: [DateModalComponent]
 })

@@ -1,8 +1,8 @@
 export class the501sDate {
   title: string;
   date: Date;
-  start: string;
-  end: string;
+  start: any;
+  end: any;
   location: string;
   description: string;
   img: string;
