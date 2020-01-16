@@ -1,10 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DatesComponent } from 'src/app/dates/dates.component';
-import { the501sEvents } from '../the501sEvents';
 import { DateModalComponent } from '../modals/date-modal/date-modal.component';
 import { MatDialog } from '@angular/material';
-import { Subscription, fromEvent, timer } from 'rxjs';
+import { Subscription, fromEvent, timer, Subject } from 'rxjs';
 import { take, switchMap, mapTo, startWith, scan, takeWhile, tap } from 'rxjs/operators';
+import { DatesService } from '../services/dates.service';
+import { the501sDate } from '../models/the501sDate';
 
 let currentNumber: any = 0;
 
@@ -39,15 +40,21 @@ export class HomeComponent implements OnInit, OnDestroy {
   private subscription1: Subscription;
   private subscription2: Subscription;
 
-  events = the501sEvents;
+  events: the501sDate[] = [];
 
   dialogSubscription: Subscription;
 
+  newEvent: the501sDate;
+
+  refresh: Subject<any> = new Subject();
+
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private datesService: DatesService
   ) { }
 
   ngOnInit() {
+    this.getDates();
     this.generateRanking(4, 18);
 
     this.subscription1 = enter1$.pipe(
@@ -85,6 +92,24 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.randomNumber1 =  Math.floor(Math.random() * (max - min + 1) + min);
     this.randomNumber2 = this.randomNumber1 + 1;
 
+  }
+
+  getDates() {
+    this.datesService.getDates().subscribe(e => {
+      e.forEach(event => {
+          this.newEvent = {
+          title: 'the 501s @ ' + event.venue.name,
+          date: new Date(event.datetime),
+          start: new Date(event.datetime).getTime(),
+          end: event.datetime,
+          location: event.location,
+          description: event.description,
+          img: ''
+        };
+          this.events.push(this.newEvent);
+          this.refresh.next();
+      });
+    });
   }
 
   openModal() {

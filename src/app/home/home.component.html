@@ -34,8 +34,10 @@
           </div>
         </div>
       </div>
-      <h4 class="fake-anchor mt-3" (click)="openModal()">
-        {{ event.title }}
+      <h4 class="fake-anchor mt-3">
+        <a [routerLink]="['/dates']">
+          {{ event.title }}
+        </a>
       </h4>
     </div>
   </div>

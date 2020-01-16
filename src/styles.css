@@ -23,6 +23,10 @@ mat-icon path {
   padding: 5px;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .the501s-btn:hover {
   color: #a8112e;
   background: #fff;
