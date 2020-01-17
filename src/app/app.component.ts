@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private _router: Router
+    public _router: Router
     ) {
     this.matIconRegistry.addSvgIcon(
       'contact',
