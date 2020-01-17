@@ -48,6 +48,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   refresh: Subject<any> = new Subject();
 
+  interval: any;
+
   constructor(
     public dialog: MatDialog,
     private datesService: DatesService

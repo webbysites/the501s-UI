@@ -42,6 +42,25 @@ img {
   border-radius: 10px;
 }
 
+#display1, #display2 {
+  font-size: 40px;
+}
+
+.the501s-btn {
+  color: #fff;
+  background: #a8112e;
+  border: 1px solid #a8112e;
+  height: 40px;
+  width: 50px;
+  padding: 5px;
+}
+
+.the501s-btn:hover {
+  color: #a8112e;
+  background: #fff;
+  transition: ease 300ms;
+}
+
 @media (max-width: 700px) {
   .date {
     width: 25%;

@@ -7,11 +7,18 @@
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #ddd;
+}
 
 mat-icon path {
   color: #a8112e;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .the501s-btn {
@@ -21,10 +28,6 @@ mat-icon path {
   height: 40px;
   width: 50px;
   padding: 5px;
-}
-
-a:hover {
-  text-decoration: none;
 }
 
 .the501s-btn:hover {

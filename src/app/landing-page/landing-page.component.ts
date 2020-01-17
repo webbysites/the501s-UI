@@ -10,7 +10,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       state('void', style({
         opacity: 0
       })),
-      transition(':enter', animate('1000ms 4000ms'))
+      transition(':enter', animate('1000ms 2500ms'))
     ])
   ]
 })
@@ -25,7 +25,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
   }
 
   changeState() {
-    this.currentState = this.currentState === 'initial' ? 'finla' : 'initial';
+    this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
   }
 
   ngAfterViewInit() {

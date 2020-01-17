@@ -1,12 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container-fluid">
-  <button  class="openbtn d-block d-md-none" (click)="openNav()">
-    <mat-icon class="mt-3">menu</mat-icon>
-  </button >
-
 
   <app-sidenav class="d-block d-md-none"></app-sidenav>
-  <app-side-nav class="d-none d-md-block"></app-side-nav>
+
+  <!-- hide nav on landing page -->
+  <div *ngIf="_router.url != '/'">
+    <a class="btn text-left openbtn d-block d-md-none" (click)="openNav()">
+      <mat-icon class="p-2">menu</mat-icon>
+    </a >
+    <app-side-nav class="d-none d-md-block"></app-side-nav>
+  </div>
   <router-outlet></router-outlet>
   <app-footer></app-footer>
 </div>
