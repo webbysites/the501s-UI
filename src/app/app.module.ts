@@ -2,11 +2,15 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material';
+import { MatSelectModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 
 import { DatePipe } from '@angular/common';
@@ -48,11 +52,16 @@ import { DateModalComponent } from './modals/date-modal/date-modal.component';
     BrowserAnimationsModule,
     BrowserModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    FormsModule,
     HttpClientModule,
     MatDialogModule,
+    MatFormFieldModule,
     MatIconModule,
+    MatInputModule,
+    MatSelectModule,
     MatSidenavModule,
     NgbModule,
+    ReactiveFormsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

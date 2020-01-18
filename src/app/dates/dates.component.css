@@ -1,5 +1,10 @@
+#top-area {
+  background: var(--main-501s-blue);
+  color: #fff;
+}
+
 .modal-title {
-  color: #a8112e;
+  color: var(--main-501s-red);
 }
 
 .modal-footer {
@@ -17,7 +22,7 @@
 }
 
 .the501s-btn:hover {
-  color: #a8112e;
-  background: #fff;
+  /* color: #a8112e; */
+  background: transparent;
   transition: ease 300ms;
 }

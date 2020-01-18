@@ -1,8 +1,72 @@
-<div class="container">
-  <div class="row h-100">
-    <div class="col d-flex flex-column justify-content-center align-items-center">
-      <h1 class="mb-5">Contact</h1>
-      <mat-icon style="transform: scale(3)" svgIcon="contact"></mat-icon>
+<div class="container-fluid">
+
+  <div id="top-area" class="row h-100 py-5">
+    <div
+      class="col-12 col-lg-8 offset-lg-2 d-flex flex-column align-items-center justify-content-center"
+    >
+      <h1 class="mb-3">contact <span style="color: #a8112e; font-weight: 700">the 501s</span></h1>
+      <h3 class="mb-3 text-center">
+        we take your requsets.
+      </h3>
+      <h3 class="mb-3 text-center px-2">
+        just don't take them seriously.
+      </h3>
     </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row h-100">
+      <div
+        class="contact-form"
+        [formGroup]="contactForm"
+        #formDirective="ngForm"
+        >
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <mat-form-field appearance="fill" >
+              <input
+                matInput
+                placeholder="first name"
+                formControlName="firstName"
+              >
+            </mat-form-field>
+          </div>
+          <div class="col-12 col-lg-6">
+            <mat-form-field appearance="fill">
+              <input
+                matInput
+                placeholder="last name"
+                formControlName="lastName"
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <mat-form-field appearance="fill">
+              <input
+                matInput
+                placeholder="enter your email addess"
+                formControlName="email"
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <textarea matInput placeholder="have a request?" formControlName="requests"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          (click)="onSubmit()"
+        >
+          submit
+        </button>
+      </div>
   </div>
 </div>

@@ -3,9 +3,10 @@ img {
     padding: 0;
 }
 
-.container {
+.container-fluid {
     /* height: 100vh; */
 }
+
 .date-column {
   background: #fff;
 }
@@ -66,9 +67,6 @@ img {
     width: 25%;
   }
 
-  #display1, #display2 {
-    color: #a8112e;
-  }
   /* #header-image {
     background: url('../../assets/img/homepageAssets/the-501s-3.jpg') no-repeat top left;
   } */

@@ -1,5 +1,21 @@
-<div class="container">
-  <div class="row text-center">
+<div class="container-fluid">
+
+  <div id="top-area" class="row h-100 py-5">
+    <div
+      class="col-12 col-lg-8 offset-lg-2 d-flex flex-column align-items-center justify-content-center"
+    >
+      <h1 class="mb-3">keeping up with <span style="color: #a8112e; font-weight: 700">the 501s</span></h1>
+      <h3 class="mb-3 text-center">
+        we take your requsets.
+      </h3>
+      <h3 class="mb-3 text-center px-2">
+        just don't take them seriously.
+      </h3>
+      <a class="w-25 btn the501s-btn">have a request?</a>
+    </div>
+  </div>
+
+  <div class="row text-center mt-5">
     <div class="col-md-4">
       <div class="btn-group">
         <div
@@ -92,6 +108,7 @@
     </mwl-calendar-day-view>
   </div>
 </div>
+
 <ng-template #customCellTemplate let-day="day" let-locale="locale">
   <div class="cal-cell-top">
     <span class="cal-day-badge" *ngIf="day.badgeTotal > 0">

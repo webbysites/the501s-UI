@@ -1,6 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 
+:root {
+  --main-501s-red: #A8112E;
+  --main-501s-blue: #778BA5;
+  --main-501s-brown: #DDB179;
+  --main-501s-brass: #CD9575;
+}
+.btn-primary {
+  background: var(--main-501s-red) !important;
+  border: 1px solid var(--main-501s-red) !important;
+}
+
+.btn-primary:hover {
+  background: transparent !important;
+  color: var(--main-501s-red) !important;
+}
+
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
@@ -14,7 +30,7 @@ body {
 }
 
 mat-icon path {
-  color: #a8112e;
+  color: var(--main-501s-red);
 }
 
 a:hover {
@@ -23,16 +39,16 @@ a:hover {
 
 .the501s-btn {
   color: #fff;
-  background: #a8112e;
-  border: 1px solid #a8112e;
+  background: var(--main-501s-red);
+  border: 1px solid var(--main-501s-red);
   height: 40px;
   width: 50px;
   padding: 5px;
 }
 
 .the501s-btn:hover {
-  color: #a8112e;
-  background: #fff;
+  color: var(--main-501s-red);
+  background: transparent;
   transition: ease 300ms;
 }
 
