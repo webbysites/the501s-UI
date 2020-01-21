@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Subscribable, Subscription } from 'rxjs';
 import { VoteContactService } from '../services/vote-contact.service';
+import { MatDialog } from '@angular/material';
+import { VotingResponseModalComponent } from '../modals/voting-response-modal/voting-response-modal.component';
 
 @Component({
   selector: 'app-voting',
@@ -19,9 +21,9 @@ export class VotingComponent implements OnInit, OnDestroy {
 
   constructor(
     private fb: FormBuilder,
-    private vcs: VoteContactService
-  )
-  { }
+    private vcs: VoteContactService,
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit() {
     this.voteContactForm = this.createForm();
@@ -49,8 +51,24 @@ export class VotingComponent implements OnInit, OnDestroy {
         this.voteContact = contact;
       }
     });
+    this.responseModal();
     this.clearFunction();
 
+  }
+
+  responseModal() {
+    const dialogRef = this.dialog.open(VotingResponseModalComponent, {
+      panelClass: 'custom-dialog-container',
+      data: {
+
+      },
+      disableClose: true,
+      width: '600px',
+      height: '520px'
+    });
+    dialogRef.afterClosed().subscribe(res => {
+
+    });
   }
 
   clearFunction(): void {

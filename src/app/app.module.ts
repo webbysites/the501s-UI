@@ -30,6 +30,8 @@ import { AboutComponent } from './about/about.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { DateModalComponent } from './modals/date-modal/date-modal.component';
+import { VotingResponseModalComponent } from './modals/voting-response-modal/voting-response-modal.component';
+import { ContactResponseModalComponent } from './modals/contact-response-modal/contact-response-modal.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { DateModalComponent } from './modals/date-modal/date-modal.component';
     SideNavComponent,
     FooterComponent,
     DateModalComponent,
+    VotingResponseModalComponent,
+    ContactResponseModalComponent,
   ],
   imports: [
     AngularFontAwesomeModule,
@@ -65,6 +69,10 @@ import { DateModalComponent } from './modals/date-modal/date-modal.component';
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],
-  entryComponents: [DateModalComponent]
+  entryComponents: [
+    DateModalComponent,
+    ContactResponseModalComponent,
+    VotingResponseModalComponent
+  ]
 })
 export class AppModule { }

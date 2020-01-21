@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { FormBuilder, NgForm, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ContactService } from '../services/contact.service';
+import { MatDialog } from '@angular/material';
+import { ContactResponseModalComponent } from '../modals/contact-response-modal/contact-response-modal.component';
 
 
 @Component({
@@ -19,7 +21,8 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   constructor(
     private fb: FormBuilder,
-    private cs: ContactService
+    private cs: ContactService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -54,8 +57,23 @@ export class ContactComponent implements OnInit, OnDestroy {
     // }, err => {
     //   console.log('err');
     // });
-    // this.responseModal();
+    this.responseModal();
     this.clearFunction();
+  }
+
+  responseModal() {
+    const dialogRef = this.dialog.open(ContactResponseModalComponent, {
+      panelClass: 'custom-dialog-container',
+      data: {
+
+      },
+      disableClose: true,
+      width: '600px',
+      height: '520px'
+    });
+    dialogRef.afterClosed().subscribe(res => {
+
+    });
   }
 
   private clearFunction(): void {
