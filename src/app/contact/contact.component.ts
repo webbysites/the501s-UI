@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { FormBuilder, NgForm, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { ContactService } from '../services/contact.service';
 
 
 @Component({
@@ -8,14 +9,17 @@ import { Subscription } from 'rxjs';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, OnDestroy {
   @ViewChild('formDirective', {static: true}) private formDirective: NgForm;
   contactForm: FormGroup;
 
-  contactFromSubscription: Subscription;
+  contactFormSubscription: Subscription;
+
+  contact: any;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private cs: ContactService
   ) { }
 
   ngOnInit() {
@@ -39,12 +43,12 @@ export class ContactComponent implements OnInit {
       'requests': this.contactForm.controls.requests.value
     };
     console.log(ob);
-    // this.contactformSubscription = this.cs.createContact(ob).subscribe(contact => {
-    //   console.log(contact);
-    //   if (contact) {
-    //     this.contact = contact;
-    //   }
-    // });
+    this.contactFormSubscription = this.cs.createContact(ob).subscribe(contact => {
+      console.log(contact);
+      if (contact) {
+        this.contact = contact;
+      }
+    });
     // this.emailSubscription = this.es.sendEmail(ob).subscribe(data => {
     //   console.log('email was sent');
     // }, err => {
@@ -57,6 +61,12 @@ export class ContactComponent implements OnInit {
   private clearFunction(): void {
     this.formDirective.resetForm();
     this.contactForm.reset();
+  }
+
+  ngOnDestroy() {
+    if (this.contactFormSubscription) {
+      this.contactFormSubscription.unsubscribe();
+    }
   }
 
 }

@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  datesAPI: 'http://localhost:8080/dates'
+  datesAPI: 'http://localhost:8080/dates',
+  contactAPI: 'http://localhost:8080/contact/',
+  voteContactAPI: 'http://localhost:8080/vote/'
 };
 
 /*

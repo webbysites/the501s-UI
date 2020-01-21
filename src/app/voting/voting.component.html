@@ -1,8 +1,80 @@
-<div class="container">
-  <div class="row h-100">
-    <div class="col d-flex flex-column justify-content-center align-items-center">
-      <h1 class="mb-5">Vote For Us coming soon!</h1>
-      <mat-icon style="transform: scale(3)" svgIcon="vote"></mat-icon>
+<div class="container-fluid">
+
+  <div id="top-area" class="row h-100 py-5">
+    <div
+      class="col-12 col-lg-8 offset-lg-2 d-flex flex-column align-items-center justify-content-center"
+    >
+      <h1 class="mb-3">Vote for <span style="color: #a8112e; font-weight: 700">the 501s</span></h1>
+      <h3 class="mb-3 text-center">
+        we are climbing our way to the top
+      </h3>
+      <h3 class="mb-3 text-center px-2">
+        your vote can help us make it there
+      </h3>
     </div>
   </div>
+
+  <div class="container">
+    <div class="row h-100">
+      <div
+        class="vote-contact-form"
+        [formGroup]="voteContactForm"
+        #formDirective="ngForm"
+      >
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <mat-form-field appearance="fill">
+              <input
+                matInput
+                placeholder="frist name"
+                formControlName="firstName"
+              >
+            </mat-form-field>
+          </div>
+          <div class="col-12 col-lg-4">
+            <mat-form-field appearance="fill">
+              <input
+                matInput
+                placeholder="last name"
+                formControlName="lastName"
+              >
+            </mat-form-field>
+          </div>
+          <div class="col-12 col-lg-4">
+            <mat-form-field appearance="fill">
+              <input
+                matInput
+                placeholder="email"
+                formControlName="email"
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <mat-form-field appearance="fill">
+              <textarea
+                matInput
+                placeholder="any comments or word of encouragement"
+                formControlName="comment"
+                rows=6
+              ></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              (click)="onSubmit()"
+            >
+              VOTE!!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
