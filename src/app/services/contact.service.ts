@@ -21,6 +21,6 @@ export class ContactService {
 
   createContact(contact: Object): Observable<Object> {
     console.log(contact);
-    return this.http.post(environment.contactAPI + 'create', contact, httpOptions);
+    return this.http.post(environment.contactAPI + 'contact/create', contact, httpOptions);
   }
 }

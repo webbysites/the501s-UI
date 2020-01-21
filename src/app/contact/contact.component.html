@@ -14,15 +14,14 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container py-5">
 
-    <div class="row h-100">
       <div
         class="contact-form"
         [formGroup]="contactForm"
         #formDirective="ngForm"
         >
-        <div class="row">
+        <div class="row w-100">
           <div class="col-12 col-lg-6">
             <mat-form-field appearance="fill" >
               <input
@@ -42,7 +41,7 @@
             </mat-form-field>
           </div>
         </div>
-        <div class="row">
+        <div class="row w-100">
           <div class="col-12 col-lg-6">
             <mat-form-field appearance="fill">
               <input
@@ -53,7 +52,7 @@
             </mat-form-field>
           </div>
         </div>
-        <div class="row">
+        <div class="row w-100">
           <div class="col">
             <mat-form-field appearance="fill">
               <textarea matInput placeholder="have a request?" formControlName="requests"></textarea>
@@ -68,5 +67,5 @@
           submit
         </button>
       </div>
-  </div>
+
 </div>

@@ -21,6 +21,6 @@ export class VoteContactService {
   ) { }
 
   createVoteContact(voteContact: Object): Observable<Object> {
-    return this.http.post<Object>(environment.voteContactAPI + 'create', voteContact, httpOptions);
+    return this.http.post<Object>(environment.voteContactAPI + 'vote/create', voteContact, httpOptions);
   }
 }

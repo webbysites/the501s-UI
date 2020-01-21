@@ -61,3 +61,7 @@ a:hover {
   font-weight: 300;
 }
 
+mat-form-field {
+  width: 100%;
+}
+
