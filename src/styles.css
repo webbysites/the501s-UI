@@ -27,6 +27,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: #ddd;
+  color: #333;
 }
 
 mat-icon path {

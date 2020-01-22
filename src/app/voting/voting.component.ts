@@ -1,14 +1,34 @@
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Subscribable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { VoteContactService } from '../services/vote-contact.service';
 import { MatDialog } from '@angular/material';
 import { VotingResponseModalComponent } from '../modals/voting-response-modal/voting-response-modal.component';
+import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
+
+
+import { FakeBands } from '../../../src/fakeBands';
+import { FakeBand } from '../models/fakeBand';
+
+const bandsAnimation = trigger('bandsAnimation', [
+  transition('* <=> *', [
+    query(':enter',
+      [style({ opacity: 0 }), stagger('-600ms', animate('400ms ease-out', style({ opacity: 1 })))],
+      { optional: true }
+    ),
+    query(':leave',
+      animate('200ms', style({ opacity: 0 })),
+      { optional: true }
+    )
+  ])
+]);
+
 
 @Component({
   selector: 'app-voting',
   templateUrl: './voting.component.html',
-  styleUrls: ['./voting.component.css']
+  styleUrls: ['./voting.component.css'],
+  animations: [bandsAnimation]
 })
 export class VotingComponent implements OnInit, OnDestroy {
   @ViewChild('formDirective', {static: true}) private formDirective: NgForm;
@@ -19,6 +39,8 @@ export class VotingComponent implements OnInit, OnDestroy {
 
   voteContactFormSubscription: Subscription;
 
+  bands: FakeBand[] = FakeBands;
+
   constructor(
     private fb: FormBuilder,
     private vcs: VoteContactService,
@@ -27,6 +49,7 @@ export class VotingComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.voteContactForm = this.createForm();
+    this.shuffleBands(this.bands);
   }
 
   createForm() {
@@ -75,6 +98,15 @@ export class VotingComponent implements OnInit, OnDestroy {
     this.formDirective.resetForm();
     this.voteContactForm.reset();
   }
+
+  shuffleBands(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
   ngOnDestroy() {
     if (this.voteContactFormSubscription) {
       this.voteContactFormSubscription.unsubscribe();

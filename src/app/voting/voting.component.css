@@ -1,7 +1,11 @@
 .container {
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 #top-area {
   background: #CD957580;
+}
+
+#bands-row {
+  background: #778BA550;
 }
