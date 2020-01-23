@@ -1,3 +1,178 @@
 .container {
-  height: 100vh;
+  /* height: 100vh; */
+}
+
+#home-top-area {
+  background: #6699cc80;
+}
+
+.about-img {
+  width: 100px;
+  height: 100px;
+}
+
+.line {
+  height: 25px;
+  min-width: 100%;
+  max-width: 100%;
+  margin: 0;
+  line-height: 25px;
+  font-size: 14px;
+  color: #fff;
+  padding: 0 0 10px;
+  position: relative;
+}
+
+.line:before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 25px;
+  top: 0;
+  z-index: -2;
+  background: #ddd;
+}
+
+.line:after {
+  content: '';
+  background: #333;
+  height: 25px;
+  transition: 800ms;
+  display: block;
+  width: 100%;
+  animation: animate 1 2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.aaron-line1:after {
+  max-width: 100%;
+}
+
+.aaron-line2:after {
+  max-width: 75%;
+}
+
+.aaron-line3:after {
+  max-width: 90%;
+}
+
+.aaron-line4:after {
+  max-width: 60%;
+}
+
+.aaron-line5:after {
+  max-width: 7%;
+}
+
+.aaron-line6:after {
+  max-width: 95%;
+}
+
+.derek-line1:after {
+  max-width: 90%;
+}
+
+.derek-line2:after {
+  max-width: 60%;
+}
+
+.derek-line3:after {
+  max-width: 50%;
+}
+
+.derek-line4:after {
+  max-width: 66%;
+}
+
+.derek-line5:after {
+  max-width: 11%;
+}
+
+.derek-line6:after {
+  max-width: 90%;
+}
+
+.johnny-line1:after {
+  max-width: 71%;
+}
+
+.johnny-line2:after {
+  max-width: 43%;
+}
+
+.johnny-line3:after {
+  max-width: 37%;
+}
+
+.johnny-line4:after {
+  max-width: 100%;
+}
+
+.johnny-line5:after {
+  max-width: 0%;
+}
+
+.johnny-line6:after {
+  max-width: 66%;
+}
+
+.travis-line1:after {
+  max-width: 30%;
+}
+
+.travis-line2:after {
+  max-width: 97%;
+}
+
+.travis-line3:after {
+  max-width: 50%;
+}
+
+.travis-line4:after {
+  max-width: 12%;
+}
+
+.travis-line5:after {
+  max-width: 1%;
+}
+
+.travis-line6:after {
+  max-width: 90%;
+}
+
+.jaime-line1:after {
+  max-width: 50%;
+}
+
+.jaime-line2:after {
+  max-width: 22%;
+}
+
+.jaime-line3:after {
+  max-width: 10%;
+}
+
+.jaime-line4:after {
+  max-width: 50%;
+}
+
+.jaime-line5:after {
+  max-width: 100%;
+}
+
+.jaime-line6:after {
+  max-width: 33%;
+}
+
+@keyframes animate {
+  0% {
+    width: 0%
+  }
+  100% {
+    width: 100%;
+  }
 }
