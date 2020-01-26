@@ -4,5 +4,8 @@
 
 #top-area {
   background-color: #DDB17980;
+}
 
+mat-icon .btn-icon path {
+  color: #fff;
 }

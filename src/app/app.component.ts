@@ -42,6 +42,23 @@ export class AppComponent implements OnInit {
       'thumb-up',
       this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/img/icons/thumb-up.svg')
     );
+    this.matIconRegistry.addSvgIcon(
+      'email',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/img/icons/email.svg')
+    );
+    this.matIconRegistry.addSvgIcon(
+      'send',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/img/icons/send.svg')
+    );
+    this.matIconRegistry.addSvgIcon(
+      'person',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/img/icons/person.svg')
+    );
+    this.matIconRegistry.addSvgIcon(
+      'message',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/img/icons/message.svg')
+    );
+
 
   }
 

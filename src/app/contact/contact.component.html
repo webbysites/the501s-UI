@@ -6,10 +6,10 @@
     >
       <h1 class="mb-3">contact <span style="color: #a8112e; font-weight: 700">the 501s</span></h1>
       <h3 class="mb-3 text-center">
-        we take your requsets.
+        we are down to play your next event
       </h3>
       <h3 class="mb-3 text-center px-2">
-        just don't take them seriously.
+        shoot us an email
       </h3>
     </div>
   </div>
@@ -29,6 +29,7 @@
                 placeholder="first name"
                 formControlName="firstName"
               >
+              <mat-icon svgIcon="person" matSuffix></mat-icon>
             </mat-form-field>
           </div>
           <div class="col-12 col-lg-6">
@@ -38,6 +39,7 @@
                 placeholder="last name"
                 formControlName="lastName"
               >
+              <mat-icon svgIcon="person" matSuffix></mat-icon>
             </mat-form-field>
           </div>
         </div>
@@ -49,13 +51,15 @@
                 placeholder="enter your email addess"
                 formControlName="email"
               >
+              <mat-icon svgIcon="email" matSuffix></mat-icon>
             </mat-form-field>
           </div>
         </div>
         <div class="row w-100">
           <div class="col">
             <mat-form-field appearance="fill">
-              <textarea matInput placeholder="have a request?" formControlName="requests"></textarea>
+              <textarea matInput placeholder="message" formControlName="message"></textarea>
+              <mat-icon svgIcon="message" matSuffix></mat-icon>
             </mat-form-field>
           </div>
         </div>
@@ -65,6 +69,7 @@
           (click)="onSubmit()"
         >
           submit
+          <!-- <mat-icon class="btn-icon" svgIcon="send" matSuffix></mat-icon> -->
         </button>
       </div>
 

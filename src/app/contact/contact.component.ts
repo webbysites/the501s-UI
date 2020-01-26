@@ -34,16 +34,16 @@ export class ContactComponent implements OnInit, OnDestroy {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', Validators.required],
-      requests: ['', Validators.required]
+      message: ['', Validators.required]
     });
   }
 
   onSubmit() {
     const ob = {
-      'firstName': this.contactForm.controls.firstName.value,
-      'lastName': this.contactForm.controls.lastName.value,
-      'email': this.contactForm.controls.email.value,
-      'requests': this.contactForm.controls.requests.value
+      firstName: this.contactForm.controls.firstName.value,
+      lastName: this.contactForm.controls.lastName.value,
+      email: this.contactForm.controls.email.value,
+      message: this.contactForm.controls.message.value
     };
     console.log(ob);
     this.contactFormSubscription = this.cs.createContact(ob).subscribe(contact => {
@@ -68,8 +68,8 @@ export class ContactComponent implements OnInit, OnDestroy {
 
       },
       disableClose: true,
-      width: '600px',
-      height: '520px'
+      width: '400px',
+      height: '250px'
     });
     dialogRef.afterClosed().subscribe(res => {
 
