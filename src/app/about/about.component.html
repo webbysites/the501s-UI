@@ -17,7 +17,18 @@
   <div class="row justify-content-center">
 
     <div class="col-12 col-lg-6 py-5 d-flex flex-column ">
-      <img src="../../assets/img/aboutPageAssets/aaron-about-img-sq.jpg" class="about-img rounded-circle my-3">
+      <div class="flip-card1 flip-card" [ngClass]="{'flipped' : flipped}" (click)="flip1()">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="../../assets/img/aboutPageAssets/aaron-about-img-sq.jpg" class="about-img rounded-circle mb-3">
+          </div>
+          <div class="flip-card-back">
+            <p class="mb-0 pt-2">Aaron</p>
+            <small>vocals</small><br>
+            <small>guitar</small>
+          </div>
+        </div>
+      </div>
       <h5>singing</h5>
       <div class="line aaron-line1">100%</div>
       <h5>guitar</h5>
@@ -33,7 +44,18 @@
     </div>
 
     <div class="col-12 col-lg-6 py-5 d-flex flex-column justify-content-center">
-      <img src="../../assets/img/aboutPageAssets/derek-about-img-sq.jpg" class="about-img rounded-circle my-3">
+      <div class="flip-card2 flip-card" [ngClass]="{'flipped' : flipped}" (click)="flip2()">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="../../assets/img/aboutPageAssets/derek-about-img-sq.jpg" class="about-img rounded-circle mb-3">
+          </div>
+          <div class="flip-card-back">
+            <p class="mb-0 pt-2">Derek</p>
+            <small>bass</small><br>
+            <small>vocals</small>
+          </div>
+        </div>
+      </div>
       <h5>singing</h5>
       <div class="line derek-line1">90%</div>
       <h5>guitar</h5>
@@ -51,7 +73,18 @@
 
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6 py-5 d-flex flex-column justify-content-center">
-      <img src="../../assets/img/aboutPageAssets/johnny-about-img-sq.jpg" class="about-img rounded-circle my-3">
+      <div class="flip-card flip-card3"  [ngClass]="{'flipped' : flipped}" (click)="flip3()">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="../../assets/img/aboutPageAssets/johnny-about-img-sq.jpg" class="about-img rounded-circle mb-3">
+          </div>
+          <div class="flip-card-back">
+            <p class="mb-0 pt-2">Johnny</p>
+            <small>drums</small><br>
+            <small>vocals</small>
+          </div>
+        </div>
+      </div>
       <h5>singing</h5>
       <div class="line johnny-line1">71%</div>
       <h5>guitar</h5>
@@ -67,7 +100,18 @@
     </div>
 
     <div class="col-12 col-lg-6 py-5 d-flex flex-column justify-content-center">
-      <img src="../../assets/img/aboutPageAssets/travis-about-img-sq.jpg" class="about-img rounded-circle my-3">
+      <div class="flip-card flip-card4" [ngClass]="{'flipped' : flipped}" (click)="flip4()">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="../../assets/img/aboutPageAssets/travis-about-img-sq.jpg" class="about-img rounded-circle mb-3">
+          </div>
+          <div class="flip-card-back">
+            <p class="mb-0 pt-2">Travis</p>
+            <small>guitar</small><br>
+            <small>vocals</small>
+          </div>
+        </div>
+      </div>
       <h5>singing</h5>
       <div class="line travis-line1">30%</div>
       <h5>guitar</h5>
@@ -85,7 +129,19 @@
 
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6 py-5 d-flex flex-column justify-content-center">
-      <img src="../../assets/img/icons/about.svg" class="about-img rounded-circle my-3">
+      <div class="flip-card flip-card5" [ngClass]="{'flipped' : flipped}" (click)="flip5()">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="../../assets/img/icons/about.svg" class="about-img rounded-circle mb-3">
+          </div>
+          <div class="flip-card-back">
+            <p class="mb-0 pt-1">Jaime</p>
+            <small>piano</small><br>
+            <small>accordion</small><br>
+            <small>vocals</small>
+          </div>
+        </div>
+      </div>
       <h5>singing</h5>
       <div class="line jaime-line1">50%</div>
       <h5>guitar</h5>

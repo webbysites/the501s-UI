@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   datesAPI: 'http://localhost:8080/',
   contactAPI: 'http://localhost:8080/',
-  voteContactAPI: 'http://localhost:8080/'
+  voteContactAPI: 'http://localhost:8080/',
+  bandMemberAPI: 'http://localhost:8080/'
 };
 
 /*
