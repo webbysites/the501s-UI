@@ -43,7 +43,7 @@ a:hover {
   background: var(--main-501s-red);
   border: 1px solid var(--main-501s-red);
   height: 40px;
-  width: 50px;
+  width: 40%;
   padding: 5px;
 }
 
