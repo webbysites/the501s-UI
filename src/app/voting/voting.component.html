@@ -98,10 +98,10 @@
     </div>
 
     <!-- bands for mobile -->
-    <div id="bands-row" class="row d-block d-lg-none py-5">
+    <div id="bands-row" class="row d-block d-lg-none py-5" [@bandsAnimation]="bands.length">
       <h3 class="d-flex justify-content-center ">Current Standings</h3>
       <hr>
-      <div class="col-12" *ngFor="let band of bands; let i = index">
+      <div class="col-12" *ngFor="let band of bands; let i = index" >
         <h4 *ngIf="band.name === 'the 501s'; else otherColor" style="color: #a8112e">
           <span style="color: #333">{{ i + 1 }}.</span> {{ band.name }}
         </h4>

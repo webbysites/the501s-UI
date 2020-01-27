@@ -16,7 +16,35 @@
 <div class="container">
   <div class="row justify-content-center">
 
-    <div class="col-12 col-lg-6 py-5 d-flex flex-column ">
+    <!-- <div class="col-12 col-lg-6 py-5 d-flex flex-column" *ngFor="let member of bandMembers">
+      <div class="flip-card mb-3" [ngClass]="{'flipped' : flipped}" (click)="flip()">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="{{ member.pic }}" class="about-img rounded-circle">
+          </div>
+          <div class="flip-card-back">
+            <p class="mb-0 pt-2">{{ member.name }}</p>
+            <small *ngFor="let instrument of member.instruments">
+              {{ instrument }}<br>
+            </small>
+          </div>
+        </div>
+      </div>
+      <h5>singing</h5>
+      <div class="line line1">{{ member.singing }}</div>
+      <h5>guitar</h5>
+      <div class="line line2">{{ member.guitar }}</div>
+      <h5>bass</h5>
+      <div class="line line3">{{ member.bass }}</div>
+      <h5>drums</h5>
+      <div class="line lin4">{{ member.drums }}</div>
+      <h5>accordion</h5>
+      <div class="line line5">{{ member.accordion }}</div>
+      <h5>makes practice</h5>
+      <div class="line line6">{{ member.practice }}</div>
+    </div> -->
+
+    <div id="aaron" class="col-12 col-lg-6 py-5 d-flex flex-column ">
       <div class="flip-card1 flip-card mb-3" [ngClass]="{'flipped' : flipped}" (click)="flip1()">
         <div class="flip-card-inner">
           <div class="flip-card-front">
@@ -30,7 +58,7 @@
         </div>
       </div>
       <h5>singing</h5>
-      <div class="line aaron-line1">100%</div>
+      <div id="a1" class="line">100%</div>
       <h5>guitar</h5>
       <div class="line aaron-line2">75%</div>
       <h5>bass</h5>
@@ -43,7 +71,7 @@
       <div class="line aaron-line6">95%</div>
     </div>
 
-    <div class="col-12 col-lg-6 py-5 d-flex flex-column justify-content-center">
+    <div id="derek" class="col-12 col-lg-6 py-5 d-flex flex-column justify-content-center">
       <div class="flip-card2 flip-card mb-3" [ngClass]="{'flipped' : flipped}" (click)="flip2()">
         <div class="flip-card-inner">
           <div class="flip-card-front">
@@ -71,7 +99,7 @@
     </div>
   </div>
 
-  <div class="row justify-content-center">
+  <div id="johnny" class="row justify-content-center">
     <div class="col-12 col-lg-6 py-5 d-flex flex-column justify-content-center">
       <div class="flip-card flip-card3 mb-3"  [ngClass]="{'flipped' : flipped}" (click)="flip3()">
         <div class="flip-card-inner">
@@ -99,7 +127,7 @@
       <div class="line johnny-line6">66%</div>
     </div>
 
-    <div class="col-12 col-lg-6 py-5 d-flex flex-column justify-content-center">
+    <div id="travis" class="col-12 col-lg-6 py-5 d-flex flex-column justify-content-center">
       <div class="flip-card flip-card4 mb-3" [ngClass]="{'flipped' : flipped}" (click)="flip4()">
         <div class="flip-card-inner">
           <div class="flip-card-front">
@@ -127,7 +155,7 @@
     </div>
   </div>
 
-  <div class="row justify-content-center">
+  <div id="jaime" class="row justify-content-center">
     <div class="col-12 col-lg-6 py-5 d-flex flex-column justify-content-center">
       <div class="flip-card flip-card5 mb-3" [ngClass]="{'flipped' : flipped}" (click)="flip5()">
         <div class="flip-card-inner">

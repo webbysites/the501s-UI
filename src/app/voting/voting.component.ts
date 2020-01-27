@@ -28,7 +28,20 @@ const bandsAnimation = trigger('bandsAnimation', [
   selector: 'app-voting',
   templateUrl: './voting.component.html',
   styleUrls: ['./voting.component.css'],
-  animations: [bandsAnimation]
+  animations: [
+    trigger('bandsAnimation', [
+      transition('* <=> *', [
+        query(':enter',
+          [style({ opacity: 0 }), stagger('-600ms', animate('400ms ease-out', style({ opacity: 1 })))],
+          { optional: true }
+        ),
+        query(':leave',
+          animate('200ms', style({ opacity: 0 })),
+          { optional: true }
+        )
+      ])
+    ])
+  ]
 })
 export class VotingComponent implements OnInit, OnDestroy {
   @ViewChild('formDirective', {static: true}) private formDirective: NgForm;
@@ -86,8 +99,8 @@ export class VotingComponent implements OnInit, OnDestroy {
 
       },
       disableClose: true,
-      width: '600px',
-      height: '520px'
+      width: '400px',
+      height: '300px'
     });
     dialogRef.afterClosed().subscribe(res => {
 
