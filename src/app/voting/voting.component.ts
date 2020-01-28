@@ -75,7 +75,7 @@ export class VotingComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     const ob = {
-      name: this.voteContactForm.controls.firstName.value,
+      name: this.voteContactForm.controls.name.value,
       email: this.voteContactForm.controls.email.value,
       comment: this.voteContactForm.controls.comment.value
     };
@@ -94,14 +94,14 @@ export class VotingComponent implements OnInit, OnDestroy {
     const dialogRef = this.dialog.open(VotingResponseModalComponent, {
       panelClass: 'custom-dialog-container',
       data: {
-
+        name: this.voteContactForm.controls.name.value
       },
       disableClose: true,
       width: '400px',
       height: '300px'
     });
     dialogRef.afterClosed().subscribe(res => {
-
+      console.log(res);
     });
   }
 
