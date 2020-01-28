@@ -67,8 +67,7 @@ export class VotingComponent implements OnInit, OnDestroy {
 
   createForm() {
     return this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      name: ['', Validators.required],
       email: ['', Validators.required],
       comment: ['', Validators.required]
     });
@@ -76,8 +75,7 @@ export class VotingComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     const ob = {
-      firstName: this.voteContactForm.controls.firstName.value,
-      lastName: this.voteContactForm.controls.lastName.value,
+      name: this.voteContactForm.controls.firstName.value,
       email: this.voteContactForm.controls.email.value,
       comment: this.voteContactForm.controls.comment.value
     };

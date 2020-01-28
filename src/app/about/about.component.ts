@@ -31,7 +31,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
   }
 
   addLineWidth() {
-    let line1 = this.el.nativeElement.querySelector('.line1:after');
+    let line1 = this.el.nativeElement.querySelector('.line1');
     console.log(line1);
     this.bandMembers.forEach(member => {
       console.log(member.singing);
