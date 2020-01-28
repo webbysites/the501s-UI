@@ -58,6 +58,10 @@ export class AppComponent implements OnInit {
       'message',
       this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/img/icons/message.svg')
     );
+    this.matIconRegistry.addSvgIcon(
+      'rivet',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/img/501s-button_texture.svg')
+    )
 
 
   }

@@ -27,7 +27,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-
+    this.scrollAnimation();
   }
 
   addLineWidth() {
@@ -73,6 +73,19 @@ export class AboutComponent implements OnInit, AfterViewInit {
       members.forEach(member => {
         this.bandMembers.push(member);
       });
+    });
+  }
+
+  scrollAnimation() {
+    const a1 = this.el.nativeElement.querySelector('#a1');
+    const a1Position = a1.offsetTop;
+    $(window).scroll(() => {
+      const positionTop = $(window).scrollTop();
+      if (a1Position <= positionTop + 700) {
+        console.log('success');
+        this.renderer.addClass(a1, 'aaron-line1');
+
+      }
     });
   }
 
