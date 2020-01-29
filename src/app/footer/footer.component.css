@@ -8,3 +8,12 @@
   color: rgba(212, 175, 55, .4);
   height: 35px;
 }
+
+#logo {
+  height: 150px;
+  width: 150px;
+}
+
+.btn-primary {
+  color: #fff;
+}

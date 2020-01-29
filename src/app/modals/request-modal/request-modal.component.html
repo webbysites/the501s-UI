@@ -1,0 +1,53 @@
+<div class="container">
+  <div id="top-area" class="row justify-content-end p-4">
+    <button class="btn xBtn" mat-button [mat-dialog-close]="true">
+      <mat-icon matSuffix>clear</mat-icon>
+    </button>
+    <h3 class="w-100 text-center">We love to take requests</h3>
+    <h5 class="w-100 text-center mb-3">we just don't take them seriously</h5>
+  </div>
+
+  <div id="bottom-area" class="row justify-content-center align-items-center p-5 mt-4">
+    <div
+      class="request-form row"
+      [formGroup]="requestForm"
+      #formDirective="ngForm"
+    >
+      <mat-form-field appearance="fill">
+        <input
+          matInput
+          placeholder="name"
+          formControlName="name"
+        >
+        <mat-icon svgIcon="person" matSuffix></mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input
+          matInput
+          placeholder="email"
+          formControlName="email"
+        >
+        <mat-icon svgIcon="email" matSuffix></mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <textarea
+          matInput
+          placeholder="request"
+          formControlName="request"
+        ></textarea>
+        <mat-icon svgIcon="message" matSuffix></mat-icon>
+      </mat-form-field>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        (click)="onSubmit()"
+        [disabled]="!requestForm.valid"
+      >
+        Submit
+      </button>
+    </div>
+
+  </div>
+</div>

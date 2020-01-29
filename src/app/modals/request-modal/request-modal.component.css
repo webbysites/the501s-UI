@@ -1,0 +1,19 @@
+.btn-primary {
+  color: #fff;
+}
+
+*:focus {
+  outline: none;
+}
+
+#top-area {
+  background: #778BA550;
+}
+
+.container {
+  padding: 0;
+}
+
+#bottom-area {
+  background: #fff url('../../../assets/img/501s-logo-white-overlay.jpg') no-repeat center center;
+}

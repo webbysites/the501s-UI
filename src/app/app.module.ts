@@ -32,6 +32,8 @@ import { FooterComponent } from './footer/footer.component';
 import { DateModalComponent } from './modals/date-modal/date-modal.component';
 import { VotingResponseModalComponent } from './modals/voting-response-modal/voting-response-modal.component';
 import { ContactResponseModalComponent } from './modals/contact-response-modal/contact-response-modal.component';
+import { RequestResponseModalComponent } from './modals/request-response-modal/request-response-modal.component';
+import { RequestModalComponent } from './modals/request-modal/request-modal.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { ContactResponseModalComponent } from './modals/contact-response-modal/c
     DateModalComponent,
     VotingResponseModalComponent,
     ContactResponseModalComponent,
+    RequestResponseModalComponent,
+    RequestModalComponent,
   ],
   imports: [
     AngularFontAwesomeModule,
@@ -72,7 +76,9 @@ import { ContactResponseModalComponent } from './modals/contact-response-modal/c
   entryComponents: [
     DateModalComponent,
     ContactResponseModalComponent,
-    VotingResponseModalComponent
+    VotingResponseModalComponent,
+    RequestModalComponent,
+    RequestResponseModalComponent
   ]
 })
 export class AppModule { }

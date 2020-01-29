@@ -7,7 +7,8 @@ export const environment = {
   datesAPI: 'http://localhost:8080/',
   contactAPI: 'http://localhost:8080/',
   voteContactAPI: 'http://localhost:8080/',
-  bandMemberAPI: 'http://localhost:8080/'
+  bandMemberAPI: 'http://localhost:8080/',
+  requestContactAPI: 'http://localhost:8080/'
 };
 
 /*
