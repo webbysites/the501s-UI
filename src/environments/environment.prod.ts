@@ -5,5 +5,5 @@ export const environment = {
   voteContactAPI: 'http://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
   bandMemberAPI: 'http://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
   requestContactAPI: 'http://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
-  email: 'http://the501s-api-prod.us-east-2.elasticbeanstalk.com/'
+  emailAPI: 'http://the501s-api-prod.us-east-2.elasticbeanstalk.com/'
 };
