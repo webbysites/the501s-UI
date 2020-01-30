@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { ContactService } from '../services/contact.service';
 import { MatDialog } from '@angular/material';
 import { ContactResponseModalComponent } from '../modals/contact-response-modal/contact-response-modal.component';
+import { EmailService } from '../services/email.service';
 
 
 @Component({
@@ -16,13 +17,15 @@ export class ContactComponent implements OnInit, OnDestroy {
   contactForm: FormGroup;
 
   contactFormSubscription: Subscription;
+  emailSubscription: Subscription;
 
   contact: any;
 
   constructor(
     private fb: FormBuilder,
     private cs: ContactService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private es: EmailService
   ) { }
 
   ngOnInit() {
@@ -52,11 +55,11 @@ export class ContactComponent implements OnInit, OnDestroy {
         this.contact = contact;
       }
     });
-    // this.emailSubscription = this.es.sendEmail(ob).subscribe(data => {
-    //   console.log('email was sent');
-    // }, err => {
-    //   console.log('err');
-    // });
+    this.emailSubscription = this.es.sendContactFormEmail(ob).subscribe(data => {
+      console.log('email was sent');
+    }, err => {
+      console.log('err');
+    });
     this.responseModal();
     this.clearFunction();
   }
@@ -65,7 +68,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     const dialogRef = this.dialog.open(ContactResponseModalComponent, {
       panelClass: 'custom-dialog-container',
       data: {
-
+        firstName: this.contactForm.controls.firstName.value
       },
       disableClose: true,
       width: '400px',

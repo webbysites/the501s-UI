@@ -4,6 +4,7 @@ import { Validators, FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { RequestContactService } from 'src/app/services/request-contact.service';
 import { RequestResponseModalComponent } from '../request-response-modal/request-response-modal.component';
+import { EmailService } from 'src/app/services/email.service';
 
 @Component({
   selector: 'app-request-modal',
@@ -16,11 +17,13 @@ export class RequestModalComponent implements OnInit, OnDestroy {
   requestForm: FormGroup;
   requestFormSubscription: Subscription;
   requetsContact: any;
+  emailSubscription: Subscription;
 
   constructor(
     private dialog: MatDialog,
     private fb: FormBuilder,
     private rcs: RequestContactService,
+    private es: EmailService,
     private dialogRef: MatDialogRef<RequestModalComponent>
   ) { }
 
@@ -47,6 +50,11 @@ export class RequestModalComponent implements OnInit, OnDestroy {
         this.requetsContact = contact;
       }
       console.log(ob);
+    });
+    this.emailSubscription = this.es.sendRequestFormEmail(ob).subscribe(data => {
+      console.log('email was sent');
+    }, err => {
+      console.log('err');
     });
     this.dialogRef.close();
     this.responseModal();

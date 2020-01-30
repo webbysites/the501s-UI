@@ -9,6 +9,7 @@ import { trigger, transition, style, animate, query, stagger } from '@angular/an
 
 import { FakeBands } from '../../../src/fakeBands';
 import { FakeBand } from '../models/fakeBand';
+import { EmailService } from '../services/email.service';
 
 const bandsAnimation = trigger('bandsAnimation', [
   transition('* <=> *', [
@@ -47,17 +48,17 @@ export class VotingComponent implements OnInit, OnDestroy {
   @ViewChild('formDirective', {static: true}) private formDirective: NgForm;
 
   voteContactForm: FormGroup;
-
   voteContact: any;
-
   voteContactFormSubscription: Subscription;
+  emailSubscription: Subscription;
 
   bands: FakeBand[] = FakeBands;
 
   constructor(
     private fb: FormBuilder,
     private vcs: VoteContactService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private es: EmailService
   ) { }
 
   ngOnInit() {
@@ -84,6 +85,11 @@ export class VotingComponent implements OnInit, OnDestroy {
       if (contact) {
         this.voteContact = contact;
       }
+    });
+    this.emailSubscription = this.es.sendVotingFormEmail(ob).subscribe(data => {
+      console.log('email was sent');
+    }, err => {
+      console.log('err');
     });
     this.responseModal();
     this.clearFunction();
