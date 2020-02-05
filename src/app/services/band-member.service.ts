@@ -13,7 +13,7 @@ export class BandMemberService {
   ) { }
 
     getBandMembers() {
-      return this.http.get(environment.bandMemberAPI + 'members') as Observable<any>;
+      return this.http.get(environment.api + 'members') as Observable<any>;
     }
 
 }

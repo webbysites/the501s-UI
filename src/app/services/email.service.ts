@@ -13,15 +13,15 @@ export class EmailService {
   ) { }
 
   sendContactFormEmail(email: Object): Observable<Object> {
-    return this.http.post(environment.emailAPI + 'sendContactFormEmail', email, {responseType: 'text'});
+    return this.http.post(environment.api + 'sendContactFormEmail', email, {responseType: 'text'});
   }
 
   sendVotingFormEmail(email: Object): Observable<Object> {
-    return this.http.post(environment.emailAPI + 'sendVotingFormEmail', email, {responseType: 'text'});
+    return this.http.post(environment.api + 'sendVotingFormEmail', email, {responseType: 'text'});
   }
 
   sendRequestFormEmail(email: Object): Observable<Object> {
-    return this.http.post(environment.emailAPI + 'sendRequestFormEmail', email, {responseType: 'text'});
+    return this.http.post(environment.api + 'sendRequestFormEmail', email, {responseType: 'text'});
   }
 
 }

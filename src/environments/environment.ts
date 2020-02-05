@@ -4,12 +4,13 @@
 
 export const environment = {
   production: false,
-  datesAPI: 'http://localhost:8080/',
-  contactAPI: 'http://localhost:8080/',
-  voteContactAPI: 'http://localhost:8080/',
-  bandMemberAPI: 'http://localhost:8080/',
-  requestContactAPI: 'http://localhost:8080/',
-  emailAPI: 'http://localhost:8080/'
+  // datesAPI: 'http://localhost:8080/',
+  // contactAPI: 'http://localhost:8080/',
+  // voteContactAPI: 'http://localhost:8080/',
+  // bandMemberAPI: 'http://localhost:8080/',
+  // requestContactAPI: 'http://localhost:8080/',
+  // emailAPI: 'http://localhost:8080/'
+  api: 'http://localhost:8080/'
 };
 
 /*

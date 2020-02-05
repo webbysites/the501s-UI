@@ -13,7 +13,7 @@ export class DatesService {
   ) { }
 
     getDates() {
-      return this.http.get<any>(environment.datesAPI + 'dates') as Observable<any>;
+      return this.http.get<any>(environment.api + 'dates') as Observable<any>;
     }
 
 }

@@ -20,6 +20,6 @@ export class RequestContactService {
   ) { }
 
   createRequestContact(requestContact: Object): Observable<Object> {
-    return this.http.post(environment.requestContactAPI + 'request/create', requestContact, httpOptions);
+    return this.http.post(environment.api + 'request/create', requestContact, httpOptions);
   }
 }
