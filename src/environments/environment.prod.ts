@@ -1,9 +1,9 @@
 export const environment = {
   production: true,
-  datesAPI: 'http://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
-  contactAPI: 'http://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
-  voteContactAPI: 'http://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
-  bandMemberAPI: 'http://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
-  requestContactAPI: 'http://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
-  emailAPI: 'http://the501s-api-prod.us-east-2.elasticbeanstalk.com/'
+  datesAPI: 'https://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
+  contactAPI: 'https://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
+  voteContactAPI: 'https://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
+  bandMemberAPI: 'https://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
+  requestContactAPI: 'https://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
+  emailAPI: 'https://the501s-api-prod.us-east-2.elasticbeanstalk.com/'
 };
