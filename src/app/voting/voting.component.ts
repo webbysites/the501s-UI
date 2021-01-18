@@ -86,11 +86,11 @@ export class VotingComponent implements OnInit, OnDestroy {
         this.voteContact = contact;
       }
     });
-    this.emailSubscription = this.es.sendVotingFormEmail(ob).subscribe(data => {
-      console.log('email was sent');
-    }, err => {
-      console.log('err');
-    });
+    // this.emailSubscription = this.es.sendVotingFormEmail(ob).subscribe(data => {
+    //   console.log('email was sent');
+    // }, err => {
+    //   console.log('err');
+    // });
     this.responseModal();
     this.clearFunction();
 

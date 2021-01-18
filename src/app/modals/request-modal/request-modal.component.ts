@@ -51,11 +51,11 @@ export class RequestModalComponent implements OnInit, OnDestroy {
       }
       console.log(ob);
     });
-    this.emailSubscription = this.es.sendRequestFormEmail(ob).subscribe(data => {
-      console.log('email was sent');
-    }, err => {
-      console.log('err');
-    });
+    // this.emailSubscription = this.es.sendRequestFormEmail(ob).subscribe(data => {
+    //   console.log('email was sent');
+    // }, err => {
+    //   console.log('err');
+    // });
     this.dialogRef.close();
     this.responseModal();
     this.clearFunction();

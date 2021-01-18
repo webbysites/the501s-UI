@@ -10,7 +10,7 @@ export const environment = {
   // bandMemberAPI: 'http://localhost:8080/',
   // requestContactAPI: 'http://localhost:8080/',
   // emailAPI: 'http://localhost:8080/'
-  api: 'http://localhost:8080/'
+  api: 'https://arhkdycdml.execute-api.us-east-1.amazonaws.com/dev'
 };
 
 /*

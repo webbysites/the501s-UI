@@ -6,5 +6,5 @@ export const environment = {
   // bandMemberAPI: 'https://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
   // requestContactAPI: 'https://the501s-api-prod.us-east-2.elasticbeanstalk.com/',
   // emailAPI: 'https://the501s-api-prod.us-east-2.elasticbeanstalk.com/'
-  api: 'https://api.the501s.com/'
+  api: 'https://arhkdycdml.execute-api.us-east-1.amazonaws.com/dev'
 };

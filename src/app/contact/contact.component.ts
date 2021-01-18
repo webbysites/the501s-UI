@@ -55,11 +55,11 @@ export class ContactComponent implements OnInit, OnDestroy {
         this.contact = contact;
       }
     });
-    this.emailSubscription = this.es.sendContactFormEmail(ob).subscribe(data => {
-      console.log('email was sent');
-    }, err => {
-      console.log('err');
-    });
+    // this.emailSubscription = this.es.sendContactFormEmail(ob).subscribe(data => {
+    //   console.log('email was sent');
+    // }, err => {
+    //   console.log('err');
+    // });
     this.responseModal();
     this.clearFunction();
   }
