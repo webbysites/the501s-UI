@@ -7,6 +7,14 @@ img {
     /* height: 100vh; */
 }
 
+#album-cover {
+  /* background: url('../../assets/img/landingpageAssets/IMG_0849.jpg') no-repeat center center; */
+  /* background-size: 50% 50%; */
+  background-color: #fff;
+  width: 50%;
+  
+}
+
 .date-column {
   background: #fff;
 }
@@ -70,4 +78,13 @@ img {
   /* #header-image {
     background: url('../../assets/img/homepageAssets/the-501s-3.jpg') no-repeat top left;
   } */
+}
+
+@media (max-width: 500px) {
+  #album-cover {
+    /* background: url('../../assets/img/landingpageAssets/IMG_0849.jpg') no-repeat center center;
+    background-size: 70%; */
+    background-color: #fff;
+    width: 100%;
+  }
 }

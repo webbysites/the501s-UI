@@ -8,14 +8,23 @@
 
 .about-img {
   margin-top: 0;
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 400px;
+  border-radius: 30px;
 }
 
 .flip-card {
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 400px;
   perspective: 1000px;
+}
+
+.flip-card:hover {
+  cursor: pointer;
+}
+
+.stats {
+  width: 80%;
 }
 
 .flip-card-inner {

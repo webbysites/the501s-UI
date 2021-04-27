@@ -4,12 +4,12 @@
   <app-sidenav class="d-block d-md-none"></app-sidenav>
 
   <!-- hide nav on landing page -->
-  <div *ngIf="_router.url != '/'">
+  <!-- <div *ngIf="_router.url != '/'">
     <a class="btn text-left openbtn d-block d-md-none" (click)="openNav()">
       <mat-icon class="p-2">menu</mat-icon>
-    </a >
+    </a > -->
     <app-side-nav class="d-none d-md-block"></app-side-nav>
-  </div>
+  <!-- </div> -->
   <router-outlet></router-outlet>
   <app-footer></app-footer>
 </div>
