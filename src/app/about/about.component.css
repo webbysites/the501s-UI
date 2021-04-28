@@ -64,7 +64,7 @@
   color: #fff;
   transform: rotateY(180deg);
   border: 1px solid var(--main-501s-blue);
-  border-radius: 50px;
+  border-radius: 30px;
 }
 
 .line {
@@ -97,7 +97,6 @@
   transition: 800ms;
   display: block;
   width: 100%;
-  animation: animate 1 2s;
   position: absolute;
   top: 0;
   left: 0;
@@ -105,122 +104,152 @@
 }
 
 .aaron-line1:after {
+  animation: animate 1 2s;
   max-width: 100%;
 }
 
 .aaron-line2:after {
+  animation: animate 1 2s;
   max-width: 75%;
 }
 
 .aaron-line3:after {
+  animation: animate 1 2s;
   max-width: 90%;
 }
 
 .aaron-line4:after {
+  animation: animate 1 2s;
   max-width: 60%;
 }
 
 .aaron-line5:after {
+  animation: animate 1 2s;
   max-width: 7%;
 }
 
 .aaron-line6:after {
+  animation: animate 1 2s;
   max-width: 95%;
 }
 
 .derek-line1:after {
+  animation: animate 1 2s;
   max-width: 90%;
 }
 
 .derek-line2:after {
+  animation: animate 1 2s;
   max-width: 60%;
 }
 
 .derek-line3:after {
+  animation: animate 1 2s;
   max-width: 50%;
 }
 
 .derek-line4:after {
+  animation: animate 1 2s;
   max-width: 66%;
 }
 
 .derek-line5:after {
+  animation: animate 1 2s;
   max-width: 11%;
 }
 
 .derek-line6:after {
+  animation: animate 1 2s;
   max-width: 90%;
 }
 
 .johnny-line1:after {
+  animation: animate 1 2s;
   max-width: 71%;
 }
 
 .johnny-line2:after {
+  animation: animate 1 2s;
   max-width: 43%;
 }
 
 .johnny-line3:after {
+  animation: animate 1 2s;
   max-width: 37%;
 }
 
 .johnny-line4:after {
+  animation: animate 1 2s;
   max-width: 100%;
 }
 
 .johnny-line5:after {
+  animation: animate 1 2s;
   max-width: 0%;
 }
 
 .johnny-line6:after {
+  animation: animate 1 2s;
   max-width: 66%;
 }
 
 .travis-line1:after {
+  animation: animate 1 2s;
   max-width: 30%;
 }
 
 .travis-line2:after {
+  animation: animate 1 2s;
   max-width: 97%;
 }
 
 .travis-line3:after {
+  animation: animate 1 2s;
   max-width: 50%;
 }
 
 .travis-line4:after {
+  animation: animate 1 2s;
   max-width: 12%;
 }
 
 .travis-line5:after {
+  animation: animate 1 2s;
   max-width: 1%;
 }
 
 .travis-line6:after {
+  animation: animate 1 2s;
   max-width: 90%;
 }
 
 .jaime-line1:after {
+  animation: animate 1 2s;
   max-width: 50%;
 }
 
 .jaime-line2:after {
+  animation: animate 1 2s;
   max-width: 22%;
 }
 
 .jaime-line3:after {
+  animation: animate 1 2s;
   max-width: 10%;
 }
 
 .jaime-line4:after {
+  animation: animate 1 2s;
   max-width: 50%;
 }
 
 .jaime-line5:after {
+  animation: animate 1 2s;
   max-width: 100%;
 }
 
 .jaime-line6:after {
+  animation: animate 1 2s;
   max-width: 33%;
 }
 
