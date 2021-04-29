@@ -14,44 +14,25 @@
   </div>
 </div>
 <div class="container">
+  
   <div class="row justify-content-center">
-
-    <!-- <div class="col-12 col-lg-6 py-5 d-flex flex-column" *ngFor="let member of bandMembers">
-      <div class="flip-card mb-3" [ngClass]="{'flipped' : flipped}" (click)="flip()">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="{{ member.pic }}" class="about-img rounded-circle">
-          </div>
-          <div class="flip-card-back">
-            <p class="mb-0 pt-2">{{ member.name }}</p>
-            <small *ngFor="let instrument of member.instruments">
-              {{ instrument }}<br>
-            </small>
-          </div>
-        </div>
-      </div>
-      <h5>singing</h5>
-      <div class="line line1">{{ member.singing }}</div>
-      <h5>guitar</h5>
-      <div class="line line2">{{ member.guitar }}</div>
-      <h5>bass</h5>
-      <div class="line line3">{{ member.bass }}</div>
-      <h5>drums</h5>
-      <div class="line lin4">{{ member.drums }}</div>
-      <h5>accordion</h5>
-      <div class="line line5">{{ member.accordion }}</div>
-      <h5>makes practice</h5>
-      <div class="line line6">{{ member.practice }}</div>
-    </div> -->
-
     <div class="col-12 col-lg-4 py-5 d-flex flex-column justify-content-center align-items-center">
       <div class="flip-card1 flip-card mb-3" [ngClass]="{'flipped' : flipped}" (click)="flip1()">
         <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="../../assets/img/aboutPageAssets/aaron.jpeg" class="about-img">
+          <div id="am-card" class="row flip-card-front mx-auto">
+            <div *ngIf="!flipped1;else nocontent" id="am-info" class="row front-info mx-auto align-self-end">
+              <div class="col-4">
+                <img class="card-button pr-4" src="../../assets/img/501s-button_texture.svg" alt="">
+              </div>
+              <div class="col-8">
+                <p class="mb-0">Aaron Magaña</p>
+                <p class="mb-0">Guitar/Vocals</p>
+
+              </div>
+            </div>
+            <ng-template #nocontent></ng-template>
           </div>
           <div class="flip-card-back" >
-            <p class="mb-0 pt-2">Aaron</p>
             <div class="stats mx-auto">
               <h5>singing</h5>
               <div id="a1" class="line">100%</div>
@@ -75,11 +56,20 @@
     <div id="derek" class="col-12 col-lg-4 py-5 d-flex flex-column justify-content-center align-items-center">
       <div class="flip-card2 flip-card mb-3" [ngClass]="{'flipped' : flipped}" (click)="flip2()">
         <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="../../assets/img/aboutPageAssets/derek.jpeg" class="about-img">
+          <div id="db-card" class="row flip-card-front mx-auto align-items-end">
+            <div *ngIf="!flipped2;else nocontent" class="row front-info mx-auto align-items-center">
+              <div class="col-4">
+                <img class="card-button pr-4" src="../../assets/img/501s-button_texture.svg" alt="">
+              </div>
+              <div class="col-8">
+                <p class="mb-0">Derek Badillo</p>
+                <p class="mb-0">Bass/Vocals</p>
+              </div>
+              <ng-template #nocontent></ng-template>
+            </div>
+            <!-- <img src="../../assets/img/aboutPageAssets/derek.jpeg" class="about-img"> -->
           </div>
           <div class="flip-card-back">
-            <p class="mb-0 pt-2">Derek</p>
             <div class="stats mx-auto">
               <h5>singing</h5>
               <div id="d1" class="line">90%</div>
@@ -102,11 +92,19 @@
     <div id="travis" class="col-12 col-lg-4 py-5 d-flex flex-column justify-content-center align-items-center">
       <div class="flip-card flip-card3 mb-3" [ngClass]="{'flipped' : flipped}" (click)="flip3()">
         <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="../../assets/img/aboutPageAssets/travis.jpeg" class="about-img">
+          <div id="tv-card" class="flip-card-front mx-auto row align-items-end">
+            <div *ngIf="!flipped3;else nocontent" class="row front-info mx-auto align-items-center">
+              <div class="col-4">
+                <img class="card-button pr-4" src="../../assets/img/501s-button_texture.svg" alt="">
+              </div>
+              <div class="col-8">
+                <p class="mb-0">Travis Vela</p>
+                <p class="mb-0">Guitar/Pedal Steel</p>
+              </div>
+              <ng-template #nocontent></ng-template>
+            </div>
           </div>
           <div class="flip-card-back">
-            <p class="mb-0 pt-2">Travis</p>
             <div class="stats mx-auto">
               <h5>singing</h5>
               <div id="t1" class="line">30%</div>
@@ -131,11 +129,19 @@
     <div class="col-12 col-lg-4 py-5 d-flex flex-column justify-content-center align-items-center">
       <div class="flip-card flip-card4 mb-3"  [ngClass]="{'flipped' : flipped}" (click)="flip4()">
         <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="../../assets/img/aboutPageAssets/johnny.jpeg" class="about-img">
+          <div id="jl-card" class="row mx-auto flip-card-front align-items-end">
+            <div *ngIf="!flipped4;else nocontent" class="row front-info mx-auto align-items-center">
+              <div class="col-4">
+                <img class="card-button pr-4" src="../../assets/img/501s-button_texture.svg" alt="">
+              </div>
+              <div class="col-8">
+                <p class="mb-0">Johnny Lighning</p>
+                <p class="mb-0">Drums</p>
+              </div>
+              <ng-template #nocontent></ng-template>
+            </div>
           </div>
           <div class="flip-card-back">
-            <p class="mb-0 pt-2">Johnny</p>
             <div class="stats mx-auto">
               <h5>singing</h5>
               <div id="jl1" class="line">71%</div>
@@ -159,11 +165,19 @@
       <div  id="jaime" class="col-12 col-lg-4 py-5 d-flex flex-column justify-content-center align-items-center">
         <div class="flip-card flip-card5 mb-3" [ngClass]="{'flipped' : flipped}" (click)="flip5()">
           <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="../../assets/img/aboutPageAssets/jaime.jpeg" class="about-img">
+            <div id="jr-card" class="row mx-auto flip-card-front align-items-end">
+              <div *ngIf="!flipped5;else nocontent" class="row front-info mx-auto align-items-center">
+                <div class="col-4">
+                  <img class="card-button pr-4" src="../../assets/img/501s-button_texture.svg" alt="">
+                </div>
+                <div class="col-8">
+                  <p class="mb-0">Jaime Ramirez</p>
+                  <p class="mb-0">Keys/Accordion</p>
+                </div>
+                <ng-template #nocontent></ng-template>
+              </div>
             </div>
             <div class="flip-card-back">
-              <p class="mb-0 pt-1">Jaime</p>
               <div class="stats mx-auto">
                 <h5>singing</h5>
                 <div id="jr1" class="line">50%</div>

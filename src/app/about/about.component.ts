@@ -13,6 +13,11 @@ export class AboutComponent implements OnInit, AfterViewInit {
   $: any;
   line1 = this.el.nativeElement.querySelector('.line1');
   bandMembers: any[] = [];
+  flipped1: boolean = false;
+  flipped2: boolean = false;
+  flipped3: boolean = false;
+  flipped4: boolean = false;
+  flipped5: boolean = false;
 
   constructor(
     private bms: BandMemberService,
@@ -43,7 +48,6 @@ export class AboutComponent implements OnInit, AfterViewInit {
   flip() {
     // this.flipped = !this.flipped;
     $('.flip-card').toggleClass('flipped');
-
   }
 
   flip1() {
@@ -55,6 +59,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
     $('#a4').toggleClass('aaron-line4');
     $('#a5').toggleClass('aaron-line5');
     $('#a6').toggleClass('aaron-line6');
+    this.flipped1 = !this.flipped1;
   }
 
   flip2() {
@@ -65,6 +70,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
     $('#d4').toggleClass('derek-line4');
     $('#d5').toggleClass('derek-line5');
     $('#d6').toggleClass('derek-line6');
+    this.flipped2 = !this.flipped2;
   }
 
   flip3() {
@@ -75,6 +81,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
     $('#t4').toggleClass('travis-line4');
     $('#t5').toggleClass('travis-line5');
     $('#t6').toggleClass('travis-line6');
+    this.flipped3 = !this.flipped3;
   }
 
   flip4() {
@@ -85,6 +92,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
     $('#jl4').toggleClass('johnny-line4');
     $('#jl5').toggleClass('johnny-line5');
     $('#jl6').toggleClass('johnny-line6');
+    this.flipped4 = !this.flipped4;
   }
 
   flip5() {
@@ -95,6 +103,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
     $('#jr4').toggleClass('jaime-line4');
     $('#jr5').toggleClass('jaime-line5');
     $('#jr6').toggleClass('jaime-line6');
+    this.flipped5 = !this.flipped5;
   }
 
   // getMemberInfo() {
