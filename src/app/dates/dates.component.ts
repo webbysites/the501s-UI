@@ -87,57 +87,57 @@ export class DatesComponent implements OnInit {
 
   refresh: Subject<any> = new Subject();
 
-  myEvents: the501sDate[] = [];
-  //   {
-  //     title: 'the 501s play joey\s',
-  //     date: new Date('1/20/2020'),
-  //     start: '8:00 pm',
-  //     end: '12:00 am',
-  //     location: '2417 N St Mary\'s St, San Antonio, TX 78212',
-  //     description: 'Come see the 501s, San Antonio\s 13th or 14th best classic country tribute band, play all your favorite country tunes!',
-  //     img: '../../assets/img/homePageAssests/the-501s-3.jpg'
-  //   }
-  // ];
+  myEvents: the501sDate[] = [
+    {
+      title: 'the 501s play joey\s',
+      date: new Date('4/29/2021'),
+      start: '8:00 pm',
+      end: '12:00 am',
+      location: '2417 N St Mary\'s St, San Antonio, TX 78212',
+      description: 'Come see the 501s, San Antonio\s 13th or 14th best classic country tribute band, play all your favorite country tunes!',
+      img: '../../assets/img/homePageAssests/the-501s-3.jpg'
+    }
+  ];
 
-  events: CalendarEvent[] = [];
-    // {
-    //   start: subDays(startOfDay(new Date()), 1),
-    //   end: addDays(new Date(), 1),
-    //   title: 'A 3 day event',
-    //   color: colors.red,
-    //   actions: this.actions,
-    //   allDay: true,
-    //   resizable: {
-    //     beforeStart: true,
-    //     afterEnd: true
-    //   },
-    //   draggable: true
-    // },
-    // {
-    //   start: startOfDay(new Date()),
-    //   title: 'An event with no end date',
-    //   color: colors.yellow,
-    //   actions: this.actions
-    // },
-    // {
-    //   start: subDays(endOfMonth(new Date()), 3),
-    //   end: addDays(endOfMonth(new Date()), 3),
-    //   title: 'A long event that spans 2 months',
-    //   color: colors.blue,
-    //   allDay: true
-    // // },
-    // {
-    //   start: addHours(startOfDay(new Date('1/20/2020')), 0),
-    //   end: addHours(new Date('1/20/2020'), 4),
-    //   title: 'the 501s play Joey\s',
-    //   color: colors.yellow,
-    //   actions: this.actions,
-    //   resizable: {
-    //     beforeStart: true,
-    //     afterEnd: true
-    //   },
-    //   draggable: true
-    // }
+  events: CalendarEvent[] = []
+  //   {
+  //     start: subDays(startOfDay(new Date()), 1),
+  //     end: addDays(new Date(), 1),
+  //     title: 'A 3 day event',
+  //     color: colors.red,
+  //     actions: this.actions,
+  //     allDay: true,
+  //     resizable: {
+  //       beforeStart: true,
+  //       afterEnd: true
+  //     },
+  //     draggable: true
+  //   },
+  //   {
+  //     start: startOfDay(new Date()),
+  //     title: 'An event with no end date',
+  //     color: colors.yellow,
+  //     actions: this.actions
+  //   },
+  //   {
+  //     start: subDays(endOfMonth(new Date()), 3),
+  //     end: addDays(endOfMonth(new Date()), 3),
+  //     title: 'A long event that spans 2 months',
+  //     color: colors.blue,
+  //     allDay: true
+  //   },
+  //   {
+  //     start: addHours(startOfDay(new Date('1/20/2020')), 0),
+  //     end: addHours(new Date('1/20/2020'), 4),
+  //     title: 'the 501s play Joey\s',
+  //     color: colors.yellow,
+  //     actions: this.actions,
+  //     resizable: {
+  //       beforeStart: true,
+  //       afterEnd: true
+  //     },
+  //     draggable: true
+  //   }
   // ];
 
   activeDayIsOpen = true;

@@ -95,6 +95,13 @@ img {
   -webkit-animation: blink 2s steps(5, start) infinite;
 }
 
+/*****************/
+/* follow button */
+/*****************/
+#follow-button {
+  background-color: #33333320;
+}
+
 .mat-icon {
   transform: scale(2);
 }
