@@ -99,7 +99,7 @@ img {
 #band-image-row {
   background: url('../../assets/img/homepageAssets/edit-jhuskin-8055-lowres.jpg') no-repeat center top;
   background-size: cover;
-  height: 600px;
+  /* height: 600px; */
   width: 100%;
   /* position: absolute; */
   top: 0;
@@ -140,11 +140,9 @@ img {
 }
 
 @media (max-width: 500px) {
-  #album-cover {
-    /* background: url('../../assets/img/landingpageAssets/IMG_0849.jpg') no-repeat center center;
-    background-size: 70%; */
-    background-color: #fff;
-    width: 100%;
-    z-index: 9999;
+  #band-image-row {
+    background: url('../../assets/img/homepageAssets/edit-jhuskin-8055-lowres.jpg') no-repeat center top;
+    background-size: contain;
+    height: 400px;
   }
 }
