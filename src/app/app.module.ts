@@ -12,6 +12,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { DatePipe } from '@angular/common';
 
@@ -69,7 +70,8 @@ import { RequestModalComponent } from './modals/request-modal/request-modal.comp
     MatSelectModule,
     MatSidenavModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

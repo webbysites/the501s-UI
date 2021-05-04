@@ -2,3 +2,43 @@
   padding-left: 0;
   padding-right: 0;
 }
+
+a {
+  color: #ddd;
+  font-weight: 100;
+  padding: 0 5px;
+  font-size: medium;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #fff
+}
+
+.mat-toolbar {
+  background: none;
+  position: fixed;
+  z-index: 99;
+}
+
+.navbar-color {
+  background-color: #333;
+  height: 50px;
+  transition: 1s;
+}
+
+.mat-toolbar-row {
+  /* background-color: transparent; */
+  position: sticky;
+  color: #ddd;
+}
+
+#the501s {
+  height: 30px;
+}
+
+#mobile-menu {
+  background: none;
+  position: fixed;
+  z-index: 99;
+}

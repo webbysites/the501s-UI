@@ -10,14 +10,6 @@ img {
     /* height: 100vh; */
 }
 
-#album-cover {
-  /* background: url('../../assets/img/landingpageAssets/IMG_0849.jpg') no-repeat center center; */
-  /* background-size: 50% 50%; */
-  background-color: #fff;
-  width: 50%;
-  
-}
-
 .date-column {
   background: #fff;
 }
@@ -77,24 +69,44 @@ img {
 /* album section */
 /*****************/
 
-#pre-save {
-  height: 60px;
-  background-color: #33333320;
-  border: 5px solid #a8112e;
-  border-radius: 10px;
-  color: #a8112e;
-  z-index: 9999;
+#top-heading {
+  height: 100px;
+  background-color: #eee
+}
+
+#album-row {
+  background-color: #eee;
 }
 
 #album-cover {
-  z-index: 9999;;
+  width: 40%;
 }
 
-.blink {
-  animation: blink 2s steps(5, start) infinite;
-  -webkit-animation: blink 2s steps(5, start) infinite;
+#album-col {
+  background: url('../../assets/img/landingpageAssets/IMG_0849.jpg') no-repeat center center;
+  background-size: contain;
+  background-color: #33333320;
 }
 
+#player-col {
+  background-color: #fff;
+}
+
+
+/******************/
+/* band image row */
+/******************/
+#band-image-row {
+  background: url('../../assets/img/homepageAssets/edit-jhuskin-8055-lowres.jpg') no-repeat center top;
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+  /* position: absolute; */
+  top: 0;
+  z-index: -1;
+  height: 100vh
+}
+ 
 /*****************/
 /* follow button */
 /*****************/

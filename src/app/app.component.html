@@ -1,13 +1,27 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<mat-toolbar color="disabled" class="d-none d-lg-block" >
+  <mat-toolbar-row [ngClass]="{'navbar-color': isScrolled}">
+    <a class="activity-link clearfix active d-flex align-items-center" href="/home">
+      <span class="icon-wrap">
+        <mat-icon>
+          <img id="the501s" src="../../assets/img/501s-button_no_texture.svg" class="d-flex align-items-center" >
+        </mat-icon>
+      </span>
+    </a>
+    <h1 class="pl-4">The 501s</h1>
+    <!-- <span class="menu-spacer"></span> -->
+    <div class="row w-100 justify-content-end d-none d-md-block text-right pr-4">
+      <a mat-button [routerLink]="'/'"> home </a>
+      <a mat-button [routerLink]="'/about'"> about </a>
+      <a mat-button [routerLink]="'/contact'"> contact </a>
+      <a mat-button [routerLink]="'/voting'"> voting </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <div class="container-fluid">
 
   <app-sidenav class="d-block d-md-none"></app-sidenav>
-
-  <!-- hide nav on landing page -->
-  <!-- <div *ngIf="_router.url != '/'"></div> -->
-
-  <app-side-nav class="d-none d-md-block"></app-side-nav>
-  <a class="btn text-left openbtn d-block d-md-none" (click)="openNav()">
+  <a id="mobile-menu" class="btn text-left openbtn d-block d-md-none" (click)="openNav()" [ngClass]="{'navbar-color': isScrolled}">
     <mat-icon class="p-2">menu</mat-icon>
   </a >
   <router-outlet></router-outlet>

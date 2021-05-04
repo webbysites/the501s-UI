@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'The 501s';
+  isScrolled = false;
 
 
 
@@ -75,7 +76,10 @@ export class AppComponent implements OnInit {
   }
 
 
-
+  @HostListener("window:scroll")
+  scrollEvent() {
+      window.pageYOffset >= 80 ? (this.isScrolled = true) : (this.isScrolled = false);
+  }
 
 
 
