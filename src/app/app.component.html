@@ -21,8 +21,8 @@
 <div class="container-fluid">
 
   <app-sidenav class="d-block d-md-none"></app-sidenav>
-  <a id="mobile-menu" class="btn text-left openbtn d-block d-md-none" (click)="openNav()" [ngClass]="{'navbar-color': isScrolled}">
-    <mat-icon class="p-2">menu</mat-icon>
+  <a class="btn text-left openbtn d-block d-md-none mobile-menu d-flex justify-content-center align-items-center" (click)="openNav()" [ngClass]="{'navbar-color': isScrolled}">
+    <mat-icon class="">menu</mat-icon>
   </a >
   <router-outlet></router-outlet>
   <app-footer></app-footer>
