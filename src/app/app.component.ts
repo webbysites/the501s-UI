@@ -72,7 +72,7 @@ export class AppComponent implements OnInit {
   }
 
    openNav() {
-    document.getElementById('mySidebar').style.width = '200px';
+    document.getElementById('mySidebar').style.width = '100%';
   }
 
 
