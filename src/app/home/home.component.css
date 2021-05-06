@@ -1,13 +1,20 @@
 a {
-  text-decoration: none;
+  /* text-decoration: none; */
+  color:rgba(156, 196, 223, .2);
 }
+
+a:hover {
+  cursor: pointer;
+}
+
 img {
     width: 100%;
     padding: 0;
 }
 
 .container-fluid {
-    /* height: 100vh; */
+  width: 100%;
+  margin: 0 auto;
 }
 
 .date-column {
@@ -70,8 +77,8 @@ img {
 /*****************/
 
 #top-heading {
-  height: 100px;
-  background-color: #eee
+  height: 120px;
+  background-color: #eee;
 }
 
 #album-row {
@@ -79,7 +86,7 @@ img {
 }
 
 #album-cover {
-  width: 40%;
+  width: 400px;
 }
 
 #album-col {
@@ -90,6 +97,11 @@ img {
 
 #player-col {
   background-color: #fff;
+}
+
+#player {
+  width: 400px;
+  height: 300px;
 }
 
 
@@ -103,8 +115,18 @@ img {
   width: 100%;
   /* position: absolute; */
   top: 0;
-  z-index: -1;
+  /* z-index: -1; */
   height: 100vh
+}
+
+#icon-row {
+  height: 32px;
+}
+
+.fab {
+  font-size: 20px;
+  margin-left: 15px;
+  color: #fff;
 }
  
 /*****************/
@@ -144,5 +166,8 @@ img {
     background: url('../../assets/img/homepageAssets/edit-jhuskin-8055-lowres.jpg') no-repeat center top;
     background-size: contain;
     height: 300px;
+  }
+  .fab {
+    font-size: 12px;
   }
 }
