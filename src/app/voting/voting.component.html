@@ -87,12 +87,12 @@
     <div id="bands-row" class="row d-block d-lg-none py-5" [@bandsAnimation]="bands.length">
       <h3 class="d-flex justify-content-center ">Current Standings</h3>
       <hr>
-      <div class="col-12" *ngFor="let band of bands; let i = index" >
-        <h4 *ngIf="band.name === 'the 501s'; else otherColor" style="color: #a8112e">
+      <div class="col-12 mb-3" *ngFor="let band of bands; let i = index" >
+        <h4 *ngIf="band.name === 'the 501s'; else otherColor" style="color: #a8112e" class="mb-0">
           <span style="color: #333">{{ i + 1 }}.</span> {{ band.name }}
         </h4>
         <ng-template #otherColor>
-          <h4>
+          <h4 class="mb-0">
             {{ i + 1}}. {{ band.name }}
           </h4>
         </ng-template>

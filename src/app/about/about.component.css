@@ -4,6 +4,11 @@
 
 #home-top-area {
   background: #6699cc80;
+  background-image: url('../../assets/img/aboutPageAssets/edit-jhuskin-7846-lowres.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 40%;
+  height: 400px;
 }
 
 
@@ -307,5 +312,44 @@
   }
   100% {
     width: 100%;
+  }
+}
+
+/* end stats animation stuff */
+
+/*******************/
+/* blink animation */
+/*******************/
+
+.blink {
+  animation: blink 2s steps(5, start) infinite;
+  -webkit-animation: blink 2s steps(5, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+
+/*****************/
+/* media queries */
+/*****************/
+
+@media (max-width: 500px) {
+  #home-top-area {
+    background: url('../../assets/img/aboutPageAssets/edit-jhuskin-7846-lowres.jpg') no-repeat center top;
+    background-size: contain;
+    height: 280px;
+  }
+
+  #we-are-the-501s {
+    font-size: 24px;;
   }
 }
