@@ -8,8 +8,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: 50% 40%;
-  height: 400px;
+  background-position: 50% 70%;
+  height: 450px;
 }
 
 mat-icon .btn-icon path {
@@ -24,7 +24,7 @@ mat-icon .btn-icon path {
   #top-area {
     background: url('../../assets/img/contactPageAssets/JJM_5674.jpg') no-repeat center top;
     background-size: contain;
-    height: 280px;
+    height: 250px;
   }
 
   h1 {

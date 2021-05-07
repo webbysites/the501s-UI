@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 40%;
-  height: 400px;
+  height: 450px;
 }
 
 
@@ -346,7 +346,8 @@
   #home-top-area {
     background: url('../../assets/img/aboutPageAssets/edit-jhuskin-7846-lowres.jpg') no-repeat center top;
     background-size: contain;
-    height: 280px;
+    background-attachment: fixed;
+    height: 250px;
   }
 
   h1 {
