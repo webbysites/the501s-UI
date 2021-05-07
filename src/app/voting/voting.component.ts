@@ -5,7 +5,7 @@ import { VoteContactService } from '../services/vote-contact.service';
 import { MatDialog } from '@angular/material';
 import { VotingResponseModalComponent } from '../modals/voting-response-modal/voting-response-modal.component';
 import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
-
+import * as $ from 'jquery';
 
 import { FakeBands } from '../../../src/fakeBands';
 import { FakeBand } from '../models/fakeBand';
@@ -64,6 +64,7 @@ export class VotingComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.voteContactForm = this.createForm();
     this.shuffleBands(this.bands);
+    this.blurAnimation();
   }
 
   createForm() {
@@ -122,6 +123,23 @@ export class VotingComponent implements OnInit, OnDestroy {
       [a[i], a[j]] = [a[j], a[i]];
     }
     return a;
+  }
+
+  blurAnimation() {
+    $(window).on("scroll", function(e) {
+  
+      var distanceScrolled = $(this).scrollTop();
+  
+      $('.blur').css('-webkit-filter', 'blur('+distanceScrolled/40+'px)');
+  
+    });
+    // $(document).on("scroll", function(){
+    //   if($(this).scrollTop() > 50) {
+    //       $('.blur').css({'webkit-filter':'blur(5px)', 'filter':'blur(5px)'});
+    //   } else {
+    //       $('.blur').css({'webkit-filter':'', 'filter':''});
+    //   }
+    // });
   }
 
   ngOnDestroy() {

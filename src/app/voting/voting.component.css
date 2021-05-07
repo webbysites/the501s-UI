@@ -16,6 +16,10 @@
   background: #778BA550;
 }
 
+/* .blur {
+  -webkit-filter: blur(4px);
+} */
+
 @media (max-width: 500px) {
   #top-area {
     background: url('../../assets/img/votingPageAssets/JJM_5494.jpg') no-repeat center top;
