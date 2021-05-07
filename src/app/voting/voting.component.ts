@@ -126,7 +126,7 @@ export class VotingComponent implements OnInit, OnDestroy {
   }
 
   blurAnimation() {
-    $(window).on("scroll", function(e) {
+    $(document).on("scroll", function(e) {
   
       var distanceScrolled = $(this).scrollTop();
   
