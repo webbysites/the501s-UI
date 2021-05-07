@@ -3,11 +3,33 @@
 }
 
 #top-area {
-  background: #CD957580;
+  /* background: #CD957580; */
+  background-image: url('../../assets/img/votingPageAssets/JJM_5494.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% 80%;
+  height: 400px;
 }
 
 #bands-row {
   background: #778BA550;
+}
+
+@media (max-width: 500px) {
+  #top-area {
+    background: url('../../assets/img/votingPageAssets/JJM_5494.jpg') no-repeat center top;
+    background-size: contain;
+    height: 280px;
+  }
+
+  h1 {
+    font-size: 28px;;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
 }
 
 
