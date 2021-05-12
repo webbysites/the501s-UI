@@ -15,6 +15,7 @@ img {
 .container-fluid {
   width: 100%;
   margin: 0 auto;
+  background: #eee;
 }
 
 .date-column {
@@ -78,11 +79,13 @@ img {
 
 #top-heading {
   height: 120px;
-  background-color: #eee;
+  background-color: #333;
+  color: #eee;
 }
 
 #album-row {
-  background-color: #eee;
+  background-color: #333;
+  
 }
 
 #album-cover {
@@ -136,8 +139,73 @@ img {
   background-color: #33333320;
 }
 
-.mat-icon {
+/* .mat-icon {
   transform: scale(2);
+} */
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/*********************/
+/* insta feed stuff */
+/*********************/
+#insta {
+  
+}
+
+#posts {
+  background: #eee;
+}
+
+.insta-img {
+  width: 300px;
+  height: 300px;
+}
+.post {
+  background: #fff;
+}
+
+.media {
+  height: 300px;
+  width: 300px;
+  background: #111;
+}
+.caption {
+  width: 250px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+  margin: 0;
+	/* position:relative; */
+	padding: 10px;
+}
+
+.caption:hover {
+  cursor: pointer;
+}
+
+.expand {
+  overflow: visible !important;
+  white-space: normal;
+}
+
+#dark-insta {
+  color: #333;
+  font-size: 32px;
+  margin-right: 0 !important;
+}
+
+.blink {
+  animation: blink 2s steps(5, start) infinite;
+  -webkit-animation: blink 2s steps(5, start) infinite;
 }
 
 @keyframes blink {
@@ -150,6 +218,10 @@ img {
     visibility: hidden;
   }
 }
+
+/*****************/
+/* media queries */
+/*****************/
 
 @media (max-width: 700px) {
   .date {

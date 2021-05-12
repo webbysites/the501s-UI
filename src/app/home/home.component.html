@@ -30,7 +30,7 @@
     <h1 class="mb-0">we are <span style="color: #a8112e; font-weight: 700">the 501s</span></h1>
     <h3>check out our new album!</h3>
   </div>
-  <div id="album-row" class="row">
+  <div id="album-row" class="row pb-4">
     <div class="col-lg-6 d-flex flex-column justify-content-start align-items-center w-100">
       
       <img id="album-cover" class="mb-4" src="../../assets/img/landingpageAssets/IMG_0849.jpg">
@@ -40,6 +40,41 @@
       <div class="row my-4">
           <iframe src="https://open.spotify.com/follow/1/?uri=spotify:artist:0ciAhZ8BWQnyXi7q6MYbRN?si=ikNcBLFLRMa86rbf1ZQQ-A&size=detail&theme=light" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
         </div>
+    </div>
+  </div>
+</div>
+
+<div id="insta" class="container-fluid">
+  <div class="container ">
+    <div class="row justify-content-center py-3 pt-lg-5">
+        <h1>Instagram</h1>
+      </div>
+      <div class="row justify-content-center align-items-center mb-5">
+        <p class="mb-0">Follow us!</p>
+        <mat-icon class="blink justify-self-end">arrow_right_alt</mat-icon>
+        <a href="https://www.instagram.com/the_501s_/" target="_blank">
+          <i id="dark-insta" class="fab fa-instagram"></i>
+        </a>
+      </div>
+    <div id="posts" class="row w-100 mx-auto justify-content-center">
+  
+      <div *ngFor="let post of posts; let i = index" class="col-lg-4 d-flex flex-column pb-3">
+        <div class="post mx-auto" *ngIf="post.media_type === 'IMAGE'">
+          <img class="media" src="{{ post.media_url }}">
+          <p class="caption" (click)="expand(post)" [ngClass]="{expand: isExpanded(post)}">
+            {{ post.caption }}
+          </p>
+        </div>
+        <div class="post mx-auto" *ngIf="post.media_type == 'VIDEO'">
+          <video class="media mx-auto" src="{{ post.media_url }}" type="video/mp4" controls></video>
+          <!-- <div class="row align-items-center justify-content-center"> -->
+            <p class="caption" (click)="expand(post)" [ngClass]="{expand: isExpanded(post)}">
+              {{ post.caption }} 
+            </p>
+            <!-- <button class="more" (click)="expand()">more...</button> -->
+          <!-- </div> -->
+        </div>
+      </div>
     </div>
   </div>
  
@@ -111,5 +146,5 @@
         </a>
       </h4>
     </div>
-  </div>
-</div> -->
+  </div> -->
+</div>
