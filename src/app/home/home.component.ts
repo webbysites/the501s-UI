@@ -7,18 +7,18 @@ import { take, switchMap, mapTo, startWith, scan, takeWhile, tap } from 'rxjs/op
 import { DatesService } from '../services/dates.service';
 import { the501sDate } from '../models/the501sDate';
 import { InstafeedService } from '../services/instafeed.service';
-import * as $ from 'jquery';
-let currentNumber: any = 0;
+// import * as $ from 'jquery';
+// let currentNumber: any = 0;
 
-const takeUntilFunction = (endRange, currentNumber) => {
-  return endRange > currentNumber
-  ? val => val <= endRange
-  : val => val >= endRange;
-};
+// const takeUntilFunction = (endRange, currentNumber) => {
+//   return endRange > currentNumber
+//   ? val => val <= endRange
+//   : val => val >= endRange;
+// };
 
-const positiveOrNegative = (endRange, currentNumber) => {
-  return endRange > currentNumber ? 1 : -1;
-};
+// const positiveOrNegative = (endRange, currentNumber) => {
+//   return endRange > currentNumber ? 1 : -1;
+// };
 
 // const updateHTML = id => val => (document.getElementById(id).innerHTML = val);
 
@@ -38,8 +38,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   randomNumber1: number;
   randomNumber2: number;
   feed: any;
-  posts: any;
+  posts: any[] = [];
   selected: any;
+  count: number = 0;
   private subscription1: Subscription;
   private subscription2: Subscription;
 
@@ -143,9 +144,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   instafeed() {
     this.instaFeed.instaFeed().subscribe(e => {
-      console.log(e);
-      this.posts = e.data;
-      console.log(this.posts)
+      e.data.forEach(post => {
+        // console.log(post);
+        
+        if (this.count < 12) {
+          this.posts.push(post);
+          this.count += 1;
+        }
+          
+      });
+        console.log(this.posts)
     })
   }
 

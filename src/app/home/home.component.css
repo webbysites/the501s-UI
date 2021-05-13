@@ -3,6 +3,11 @@ a {
   color:rgba(156, 196, 223, .2);
 }
 
+h1, h2, h3, h4, span {
+  font-weight: 300;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 a:hover {
   cursor: pointer;
 }
@@ -54,10 +59,6 @@ img {
   border-radius: 10px;
 }
 
-#display1, #display2 {
-  font-size: 40px;
-}
-
 .the501s-btn {
   color: #fff;
   background: #a8112e;
@@ -78,7 +79,7 @@ img {
 /*****************/
 
 #top-heading {
-  height: 120px;
+  /* height: 120px; */
   background-color: #333;
   color: #eee;
 }
@@ -157,9 +158,7 @@ img {
 /*********************/
 /* insta feed stuff */
 /*********************/
-#insta {
-  
-}
+
 
 #posts {
   background: #eee;
@@ -178,6 +177,7 @@ img {
   width: 300px;
   background: #111;
 }
+
 .caption {
   width: 250px;
 	white-space: nowrap;
@@ -241,5 +241,12 @@ img {
   }
   .fab {
     font-size: 12px;
+  }
+  #player {
+    width: 350px;
+  }
+
+  #album-cover {
+    width: 350px;
   }
 }
