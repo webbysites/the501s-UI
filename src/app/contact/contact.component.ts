@@ -43,8 +43,7 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     const ob = {
-      firstName: this.contactForm.controls.firstName.value,
-      lastName: this.contactForm.controls.lastName.value,
+      subject: this.contactForm.controls.firstName.value + ' ' + this.contactForm.controls.lastName.value + ' hit us up!',
       email: this.contactForm.controls.email.value,
       message: this.contactForm.controls.message.value
     };
