@@ -35,7 +35,7 @@ import { VotingResponseModalComponent } from './modals/voting-response-modal/vot
 import { ContactResponseModalComponent } from './modals/contact-response-modal/contact-response-modal.component';
 import { RequestResponseModalComponent } from './modals/request-response-modal/request-response-modal.component';
 import { RequestModalComponent } from './modals/request-modal/request-modal.component';
-
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 
 @NgModule({
@@ -73,7 +73,8 @@ import { RequestModalComponent } from './modals/request-modal/request-modal.comp
     MatSidenavModule,
     NgbModule,
     ReactiveFormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    YouTubePlayerModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

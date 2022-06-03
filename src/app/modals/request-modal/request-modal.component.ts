@@ -45,11 +45,12 @@ export class RequestModalComponent implements OnInit, OnDestroy {
       email: this.requestForm.controls.email.value,
       request: this.requestForm.controls.request.value
     };
+    console.log(ob)
     this.requestFormSubscription = this.rcs.createRequestContact(ob).subscribe(contact => {
+      console.log(contact);
       if (contact) {
         this.requetsContact = contact;
       }
-      console.log(ob);
     });
     // this.emailSubscription = this.es.sendRequestFormEmail(ob).subscribe(data => {
     //   console.log('email was sent');
