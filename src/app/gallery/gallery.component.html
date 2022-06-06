@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <div id="top-area" class="row">
+
+    </div>
+
+    <div class="row p-5">
+        <div class="col-12 col-lg-4 p-1 flex-column align-items-center" *ngFor="let image of objects; let i = index">
+            <img class="pic" src="{{prefix}}{{image.Key}}" (click)="openLightbox(image, i)">
+        </div>
+    </div>
+</div>

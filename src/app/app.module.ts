@@ -36,6 +36,8 @@ import { ContactResponseModalComponent } from './modals/contact-response-modal/c
 import { RequestResponseModalComponent } from './modals/request-response-modal/request-response-modal.component';
 import { RequestModalComponent } from './modals/request-modal/request-modal.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { GalleryComponent } from './gallery/gallery.component';
+import { LightboxComponent } from './lightbox/lightbox.component';
 
 
 @NgModule({
@@ -56,6 +58,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     ContactResponseModalComponent,
     RequestResponseModalComponent,
     RequestModalComponent,
+    GalleryComponent,
+    LightboxComponent,
   ],
   imports: [
     AngularFontAwesomeModule,
@@ -83,7 +87,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     ContactResponseModalComponent,
     VotingResponseModalComponent,
     RequestModalComponent,
-    RequestResponseModalComponent
+    RequestResponseModalComponent,
+    LightboxComponent
   ]
 })
 export class AppModule { }

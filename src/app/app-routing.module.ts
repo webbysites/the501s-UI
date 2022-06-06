@@ -6,6 +6,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ContactComponent } from './contact/contact.component';
 import { VotingComponent } from './voting/voting.component';
 import { AboutComponent } from './about/about.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 const routerOptions: ExtraOptions = {
   useHash: false,
@@ -33,7 +34,10 @@ const routes: Routes = [
   },
   {
     path: 'about', component: AboutComponent
-  }
+  },
+  {
+    path: 'gallery', component: GalleryComponent
+  },
 ];
 
 @NgModule({
