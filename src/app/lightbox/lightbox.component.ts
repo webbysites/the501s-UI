@@ -23,8 +23,8 @@ export class LightboxComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.data);
-    this.link = 'https://the501s-gallery-bucket.s3.amazonaws.com/' + this.data.image.Key[0];
+    // console.log(this.data);
+    this.link = 'https://the501s-gallery-bucket.s3.amazonaws.com/' + this.data.objects[0].Key[0];
   }
 
   nextLightbox(data) {

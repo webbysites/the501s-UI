@@ -11,19 +11,16 @@ h3, p {
     height: 80vh;
 }
 
-/* .image-div {
-    position: relative;
-} */
-
 .xBtn {
+    display: flex;
     position: absolute;
-    color: #ccc;
-    border: none;
-    background: transparent;
+    color: #aaa;
+    border: 1px;
+    border-radius: 50%;
+    background: none;
     top: 0;
     right: 0;
     transform: translate(-50%, 50%);
-    z-index: 9999;
 }
 
 .xBtn:focus {
@@ -60,6 +57,7 @@ h3, p {
 .prev:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
 }
 
 ::ng-deep .cdk-overlay-dark-backdrop {

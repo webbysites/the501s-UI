@@ -14,6 +14,12 @@ export class GalleryComponent implements OnInit {
   prefix: any;
   bucket: any;
   objects: any;
+  jjm: any[] = [];
+  jjmImage: any;
+  huskin: any[] = [];
+  huskinImage: any;
+
+  lightboxImages: any[] = [];
 
   constructor(
     private galleryService: GalleryService,
@@ -31,19 +37,34 @@ export class GalleryComponent implements OnInit {
         if (err) {
           console.log(err);
         } else {
-          this.objects = data.ListBucketResult.Contents;
-          console.log(this.objects);
+          // this.objects = data.ListBucketResult.Contents;
+          // console.log(data.ListBucketResult.Contents);
+          data.ListBucketResult.Contents.forEach(i => {
+            if (i.Key[0].match(/jjm/gi)) {
+              this.jjm.push(i);
+            } else if (i.Key[0].match(/huskin/gi)) {
+              this.huskin.push(i);
+            }
+          });
+          this.jjmImage = this.jjm[3].Key[0];
+          this.huskinImage = this.huskin[1].Key[0];
         }
       })
     })
   }
 
-  openLightbox(image,i) {  
+  openLightbox(value) {  
+    // console.log(value);
+
+    if (value === 'jjm') {
+      this.lightboxImages = this.jjm;
+    } else if (value === 'huskin') {
+      this.lightboxImages = this.huskin;
+    }
     const dialogRef = this.dialog.open(LightboxComponent, {
       panelClass: 'request-modal-container',
       data: {
-        image: image,
-        objects: this.objects,
+        objects: this.lightboxImages,
       },
       disableClose: true,
     });
@@ -51,6 +72,4 @@ export class GalleryComponent implements OnInit {
 
     });
   }
-
-
 }

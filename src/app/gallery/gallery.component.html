@@ -3,9 +3,24 @@
 
     </div>
 
-    <div class="row p-5">
+    <!-- this div was diaplaying all images from the bucket to the page -->
+    <!-- <div class="row p-5">
         <div class="col-12 col-lg-4 p-1 flex-column align-items-center" *ngFor="let image of objects; let i = index">
             <img class="pic" src="{{prefix}}{{image.Key}}" (click)="openLightbox(image, i)">
+        </div>
+    </div> -->
+    <div class="row p-4 d-flex justify-content-center align-items-center">
+        <div class="col flex-column justify-content-center align-items-center text-center">
+            <h3>Some photos we've taken!</h3>
+            <p>click one to check out the session.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center py-3">
+        <div class="col-12 col-lg-4 p-1">
+            <img class="pic" src="{{prefix}}{{jjmImage}}" (click)="openLightbox('jjm')">
+        </div>
+        <div class="col-12 col-lg-4 p-1">
+            <img class="pic" src="{{prefix}}{{huskinImage}}" (click)="openLightbox('huskin')">
         </div>
     </div>
 </div>
